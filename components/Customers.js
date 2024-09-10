@@ -5,12 +5,11 @@ import SectionTitle from './global/SectionTitle';
 
 const Customers = ({blok}) => {
   return (
-      <section class="c-portfolio" {...storyblokEditable(blok)}>
-        <div class="container">
-            {/* <h2 class="">Customer We Worked For</h2> */}
+      <section className="c-portfolio" {...storyblokEditable(blok)}>
+        <div className="container">
             <SectionTitle cssClass="c-portfolio__heading" title={blok.Title}/>
         </div>
-        <div class="c-portfolio__logos">
+        <div className="c-portfolio__logos">
           {blok.Client.map((nestedBlok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
           ))}

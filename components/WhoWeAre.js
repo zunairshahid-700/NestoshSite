@@ -9,7 +9,7 @@ const WhoWeAre = ({blok}) => {
         <div className="container">
           <div className="c-about__inner">
             <SectionTitle cssClass="c-about__title" title={blok.Title} />
-            <p class="c-about__text">{render(blok.SubHeading)}</p>
+            <p className="c-about__text">{render(blok.SubHeading)}</p>
           </div>
         </div>
       </section>

@@ -1,8 +1,4 @@
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import "../styles/globals.css";
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { storyblokInit, apiPlugin } from "@storyblok/react";
 import Feature from "../components/Feature";
 import Grid from "../components/Grid";
