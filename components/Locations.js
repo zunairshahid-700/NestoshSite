@@ -1,7 +1,7 @@
 import { storyblokEditable } from "@storyblok/react";
 import React from "react";
 import locationsIcon from '../public/assets/images/location.svg';
-import PhoneCallIcon from '../public/assets/images/phone call.svg';
+import PhoneCallIcon from '../public/assets/images/phonecall.svg';
 import envelopeIcon from '../public/assets/images/MailBlack.svg';
 import Image from "next/image";
 
@@ -21,7 +21,7 @@ const Locations = ({ blok }) => {
       <div className="location__wrap__body mb-3">
         <div className="location__wrap__body__icon">
           <figure className="mb-0">
-            <Image src={locationsIcon} alt="not found" width={100} />
+            <Image src={locationsIcon} alt="not found" />
           </figure>
         </div>
         <div className="location__wrap__body__text text-start">
