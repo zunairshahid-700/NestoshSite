@@ -1,7 +1,7 @@
 import { storyblokEditable } from "@storyblok/react";
 import React from "react";
 import locationsIcon from '../public/assets/images/location.svg';
-import PhoneCallIcon from '../public/assets/images/phonecall.svg';
+import PhoneCallIcon from '../public/assets/images/Phonecall.svg';
 import envelopeIcon from '../public/assets/images/MailBlack.svg';
 import Image from "next/image";
 
