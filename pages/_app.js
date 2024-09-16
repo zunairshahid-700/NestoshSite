@@ -15,6 +15,16 @@ import Client from "../components/Client";
 import AllArticles from '../components/AllArticles';
 import Article from '../components/Article';
 import PopularArticles from '../components/PopularArticles';
+import Contact_Banner from "../components/Contact_Banner";
+import Contact_form from "../components/Contact_form";
+import Locations from "../components/Locations";
+import Maps from "../components/Maps";
+import PlatformContent from "../components/PlatformContent";
+import FAQs from "../components/FAQs";
+import PlatformService from "../components/PlatformService";
+import PlatformServices from "../components/PlatformServices";
+
+
 const components = {
   feature: Feature,
   grid: Grid,
@@ -31,6 +41,14 @@ const components = {
   article: Article,
   'all-articles': AllArticles,
   PopularArticles: PopularArticles,
+  Contact_Banner: Contact_Banner,
+  Contact_Form: Contact_form,
+  Locations: Locations,
+  Maps: Maps,
+  PlatformContent: PlatformContent,
+  FAQs: FAQs,
+  PlatformServiceSection: PlatformService,
+  PlatformServices: PlatformServices
 };
 
 storyblokInit({

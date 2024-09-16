@@ -76,9 +76,7 @@ const PopularArticles = ({ blok }) => {
                   cssclass="c-blogs__header__heading"
                   title={blok.headline}
                 />
-                <p className="c-blogs__header__paragraph">
-                  {blok.SubHeading}
-                </p>
+                <p className="c-blogs__header__paragraph">{blok.SubHeading}</p>
               </div>
               <div className="c-blogs__body">
                 <Slider {...settings} className="s-slick js-blog-carousel">

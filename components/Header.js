@@ -74,7 +74,7 @@ const Header = () => {
           .querySelector(".c-site-header__global-wrap")
           .classList.remove("show");
         document.body.classList.remove("open-navigation");
-        document.querySelector(".c-site-header").classList.remove("sticky");
+        // document.querySelector(".c-site-header").classList.remove("sticky");
       }
     };
 
@@ -101,7 +101,7 @@ const Header = () => {
       });
 
     document
-      .querySelectorAll(".c-site-header__list__item a")
+      .querySelectorAll(".c-site-header__list .nav-item a")
       .forEach((element) => {
         element.addEventListener("click", toggleDropdown);
       });
@@ -120,7 +120,7 @@ const Header = () => {
     // Cleanup event listeners on unmount
     return () => {
       document
-        .querySelectorAll(".c-site-header__list__item.dropdown")
+        .querySelectorAll(".c-site-header__list .nav-item.dropdown")
         .forEach((element) => {
           element.removeEventListener("mouseenter", handleMouseEnter);
           element.removeEventListener("mouseleave", handleMouseLeave);
@@ -133,7 +133,7 @@ const Header = () => {
         });
 
       document
-        .querySelectorAll(".c-site-header__list__item a")
+        .querySelectorAll(".c-site-header__list .nav-item a")
         .forEach((element) => {
           element.removeEventListener("click", toggleDropdown);
         });
@@ -205,9 +205,9 @@ const Header = () => {
                         </a>
                       </Link>
                     </li> */}
-                    <li class="">
+                    <li className="nav-item ">
                       <Link href="/" passHref>
-                        <a class="nav-link c-site-header__list__item__link" href="#" role="button" data-toggle="dropdown"
+                        <a className="nav-link c-site-header__list__item__link" href="#" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
                             Home
                         </a>
@@ -223,7 +223,7 @@ const Header = () => {
                                 <div className="navbar-collapse-close-wrap sub-wrap">
                                     <button className="navbar-collapse-back back-btn d-lg-none" type="button" aria-label="Close navigation">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12" fill="none">
-                                            <path d="M0.5 11L5.5 6L0.5 1" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M0.5 11L5.5 6L0.5 1" stroke="#000" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
                                         Back
                                     </button>
@@ -238,7 +238,7 @@ const Header = () => {
                             </div>
                         </div>
                     </li>
-                    <li className="">
+                    <li className="nav-item">
                     <Link href="/history" passHref>
                         <a className="nav-link c-site-header__list__item__link"  role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -246,7 +246,7 @@ const Header = () => {
                         </a>
                       </Link>
                     </li>
-                    <li className="c-site-header__list__item">
+                    <li className="nav-item">
                     <Link href="/products" passHref>
                         <a className="nav-link c-site-header__list__item__link" role="button" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">
@@ -266,7 +266,7 @@ const Header = () => {
                                 <div className="navbar-collapse-close-wrap sub-wrap">
                                     <button className="navbar-collapse-back back-btn d-lg-none" type="button" aria-label="Close navigation">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12" fill="none">
-                                            <path d="M0.5 11L5.5 6L0.5 1" stroke="#000" stroke-linecap="round" stroke-linejoin="round"/>
+                                            <path d="M0.5 11L5.5 6L0.5 1" stroke="#000" strokeLinecap="round" strokeLinejoin="round"/>
                                         </svg>
                                         Back
                                     </button>
