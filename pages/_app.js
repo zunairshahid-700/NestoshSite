@@ -23,6 +23,8 @@ import PlatformContent from "../components/PlatformContent";
 import FAQs from "../components/FAQs";
 import PlatformService from "../components/PlatformService";
 import PlatformServices from "../components/PlatformServices";
+import PlatformsSection from "../components/PlatformsSection";
+import PlatformsSectionsContent from "../components/PlatformsSectionsContent";
 
 
 const components = {
@@ -48,7 +50,9 @@ const components = {
   PlatformContent: PlatformContent,
   FAQs: FAQs,
   PlatformServiceSection: PlatformService,
-  PlatformServices: PlatformServices
+  PlatformServices: PlatformServices,
+  PlatformsSection: PlatformsSection,
+  PlatformsTech: PlatformsSectionsContent
 };
 
 storyblokInit({
