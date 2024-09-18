@@ -8,13 +8,9 @@ import togglerIcon from "../public/assets/images/toggler.svg";
 import singaporeFlag from "../public/assets/images/singapore.svg";
 import usaFlag from "../public/assets/images/usa.svg";
 import ukFlag from "../public/assets/images/uk.svg";
-import { Nav, Dropdown, Button } from 'react-bootstrap';
-
-
 
 const Header = () => {
   useEffect(() => {
-    // Equivalent of DOMContentLoaded
     const handleMouseEnter = (event) => {
       if (
         document.querySelectorAll(".c-site-header__global-wrap.show").length ===
@@ -197,95 +193,233 @@ const Header = () => {
               </button>
             </div>
             <ul className="navbar-nav c-site-header__list">
-                    {/* <li className="nav-item c-site-header__list__item">
-                      <Link href="/" passHref>
-                        <a className="c-site-header__list__item__link" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Home
-                        </a>
+              <li className="">
+                <Link href="/" passHref>
+                  <a
+                    className="nav-link c-site-header__list__item__link"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Home
+                  </a>
+                </Link>
+              </li>
+              <li className="dropdown">
+                <Link href="/platform" passHref>
+                  <a
+                    className="nav-link dropdown-toggle c-site-header__list__item__link"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Platforms
+                  </a>
+                </Link>
+                <div
+                  className="c-site-header__list__item__dropdown-menu"
+                  aria-labelledby="resources"
+                >
+                  <div className="c-site-header__list__item__dropdown-menu__wrap">
+                    <div className="navbar-collapse-close-wrap sub-wrap">
+                      <button
+                        className="navbar-collapse-back back-btn d-lg-none"
+                        type="button"
+                        aria-label="Close navigation"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="12"
+                          viewBox="0 0 6 12"
+                          fill="none"
+                        >
+                          <path
+                            d="M0.5 11L5.5 6L0.5 1"
+                            stroke="#000"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        Back
+                      </button>
+                      <button
+                        className="navbar-collapse-close d-lg-none"
+                        type="button"
+                        aria-label="Close navigation"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <ul className="c-site-header__dropdown">
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/salesforce-cross-cloud" passHref>
+                          <a className="c-site-header__dropdown__list__item">
+                            Salesforce Cross-Cloud
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/platforms/magento" passHref>
+                          <a className="c-site-header__dropdown__list__item">
+                            Magento
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/platforms/shopify" passHref>
+                          <a className="c-site-header__dropdown__list__item">
+                            Shopify
+                          </a>
+                        </Link>
+                      </li>
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/platforms/bigcommerce" passHref>
+                          <a className="c-site-header__dropdown__list__item">
+                            Bigcommerce
+                          </a>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+              <li className="">
+                <Link href="/history" passHref>
+                  <a
+                    className="nav-link c-site-header__list__item__link"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Solutions
+                  </a>
+                </Link>
+              </li>
+              <li className="">
+                <Link href="/products" passHref>
+                  <a
+                    className="nav-link c-site-header__list__item__link"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Products
+                  </a>
+                </Link>
+              </li>
+              <li className="dropdown">
+                <Link href="/resources">
+                  <a
+                    className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Resources
+                  </a>
+                </Link>
+                <div
+                  className="c-site-header__list__item__dropdown-menu"
+                  aria-labelledby="resources"
+                >
+                  <div className="c-site-header__list__item__dropdown-menu__wrap">
+                    <div className="navbar-collapse-close-wrap sub-wrap">
+                      <button
+                        className="navbar-collapse-back back-btn d-lg-none"
+                        type="button"
+                        aria-label="Close navigation"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="12"
+                          viewBox="0 0 6 12"
+                          fill="none"
+                        >
+                          <path
+                            d="M0.5 11L5.5 6L0.5 1"
+                            stroke="#000"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        Back
+                      </button>
+                      <button
+                        className="navbar-collapse-close d-lg-none"
+                        type="button"
+                        aria-label="Close navigation"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <ul className="c-site-header__dropdown">
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/about" passHref>
+                          <a
+                            className="c-site-header__dropdown__list__item"
+                          >
+                            About Company
+                          </a>
+                        </Link>
+                      </li>
+                      <Link href="/carerrs" passHref>
+                        <li className="c-site-header__dropdown__list">
+                          <a
+                            className="c-site-header__dropdown__list__item"
+                            href="#"
+                          >
+                            Career
+                          </a>
+                        </li>
                       </Link>
-                    </li> */}
-                    <li className="nav-item ">
-                      <Link href="/" passHref>
-                        <a className="nav-link c-site-header__list__item__link" href="#" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Home
-                        </a>
+                      <Link href="/partners" passHref>
+                        <li className="c-site-header__dropdown__list">
+                          <a
+                            className="c-site-header__dropdown__list__item"
+                          >
+                            Our Partners
+                          </a>
+                        </li>
                       </Link>
-                    </li>
-                    <li className="nav-item c-site-header__list__item dropdown">
-                        <a className="nav-link dropdown-toggle c-site-header__list__item__link" href="#" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Platforms
-                        </a>
-                        <div className="c-site-header__list__item__dropdown-menu" aria-labelledby="resources">
-                            <div className="c-site-header__list__item__dropdown-menu__wrap">
-                                <div className="navbar-collapse-close-wrap sub-wrap">
-                                    <button className="navbar-collapse-back back-btn d-lg-none" type="button" aria-label="Close navigation">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12" fill="none">
-                                            <path d="M0.5 11L5.5 6L0.5 1" stroke="#000" strokeLinecap="round" strokeLinejoin="round"/>
-                                        </svg>
-                                        Back
-                                    </button>
-                                    <button className="navbar-collapse-close d-lg-none" type="button" aria-label="Close navigation">×</button>
-                                </div>
-                                <ul className="c-site-header__dropdown">
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">Salesforce Cross-Cloud</a></li>
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">Magento</a></li>
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">Shopify</a></li>
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">Bigcommerce</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                    <li className="nav-item">
-                    <Link href="/history" passHref>
-                        <a className="nav-link c-site-header__list__item__link"  role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Solutions
-                        </a>
+                      <Link href="/sustainability" passHref>
+                        <li className="c-site-header__dropdown__list">
+                          <a
+                            className="c-site-header__dropdown__list__item"
+                          >
+                            Sustainability
+                          </a>
+                        </li>
                       </Link>
-                    </li>
-                    <li className="nav-item">
-                    <Link href="/products" passHref>
-                        <a className="nav-link c-site-header__list__item__link" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                            Products
-                        </a>
-                    </Link>
-                    </li>
-                    <li className="nav-item dropdown c-site-header__list__item dropdown">
-                      <Link href="/resources">
-                        <a className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Resources
-                        </a>
+                      <Link href="/events" passHref>
+                        <li className="c-site-header__dropdown__list">
+                          <a
+                            className="c-site-header__dropdown__list__item"
+                          >
+                            News Event
+                          </a>
+                        </li>
                       </Link>
-                        <div className="c-site-header__list__item__dropdown-menu" aria-labelledby="resources">
-                            <div className="c-site-header__list__item__dropdown-menu__wrap">
-                                <div className="navbar-collapse-close-wrap sub-wrap">
-                                    <button className="navbar-collapse-back back-btn d-lg-none" type="button" aria-label="Close navigation">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="6" height="12" viewBox="0 0 6 12" fill="none">
-                                            <path d="M0.5 11L5.5 6L0.5 1" stroke="#000" strokeLinecap="round" strokeLinejoin="round"/>
-                                        </svg>
-                                        Back
-                                    </button>
-                                    <button className="navbar-collapse-close d-lg-none" type="button" aria-label="Close navigation">×</button>
-                                </div>
-                                <ul className="c-site-header__dropdown">
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">About Company</a></li>
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">Career</a></li>
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">Our Partners</a></li>
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">Sustainability</a></li>
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">News Event</a></li>
-                                    <li className="c-site-header__dropdown__list"><a className="c-site-header__dropdown__list__item" href="#">Blogs</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-
-            
+                      <Link href="/blogs" passHref>
+                        <li className="c-site-header__dropdown__list">
+                          <a
+                            className="c-site-header__dropdown__list__item"
+                          >
+                            Blogs
+                          </a>
+                        </li>
+                      </Link>
+                    </ul>
+                  </div>
+                </div>
+              </li>
+            </ul>
           </div>
           <div className="c-site-header__btn-wrap d-none d-lg-flex">
             <button className="btn-primary js-global">
