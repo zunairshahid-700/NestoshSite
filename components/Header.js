@@ -95,16 +95,23 @@ const Header = () => {
       .forEach((element) => {
         element.addEventListener("click", toggleNavbar);
       });
-
-    document
-      .querySelectorAll(".c-site-header__list .nav-item a")
+    
+    if (window.innerWidth <= 768) {
+      document
+      .querySelectorAll(".c-site-header__list >li.dropdown a")
       .forEach((element) => {
         element.addEventListener("click", toggleDropdown);
       });
+    }
 
+    // document
+    //   .querySelector(".navbar-collapse-back")
+    //   ?.addEventListener("click", closeDropdowns);
     document
-      .querySelector(".navbar-collapse-back")
-      ?.addEventListener("click", closeDropdowns);
+    .querySelectorAll(".navbar-collapse-back")
+    .forEach((element) => {
+      element.addEventListener("click", closeDropdowns);
+    });
 
     document.querySelectorAll(".js-global").forEach((element) => {
       element.addEventListener("click", toggleGlobalWrap);
@@ -116,7 +123,7 @@ const Header = () => {
     // Cleanup event listeners on unmount
     return () => {
       document
-        .querySelectorAll(".c-site-header__list .nav-item.dropdown")
+        .querySelectorAll(".c-site-header__list >li.dropdown")
         .forEach((element) => {
           element.removeEventListener("mouseenter", handleMouseEnter);
           element.removeEventListener("mouseleave", handleMouseLeave);
@@ -129,14 +136,19 @@ const Header = () => {
         });
 
       document
-        .querySelectorAll(".c-site-header__list .nav-item a")
+        .querySelectorAll(".c-site-header__list >li a")
         .forEach((element) => {
           element.removeEventListener("click", toggleDropdown);
         });
 
+      // document
+      //   .querySelector(".navbar-collapse-back")
+      //   ?.removeEventListener("click", closeDropdowns);
       document
-        .querySelector(".navbar-collapse-back")
-        ?.removeEventListener("click", closeDropdowns);
+      .querySelectorAll(".navbar-collapse-back")
+      .forEach((element) => {
+        element.removeEventListener("click", closeDropdowns);
+      });
 
       document.querySelectorAll(".js-global").forEach((element) => {
         element.removeEventListener("click", toggleGlobalWrap);
@@ -147,7 +159,7 @@ const Header = () => {
     };
   }, []);
   return (
-    <header className="c-site-header">
+    <header className="c-site-header bg-blur">
       <nav className="c-site-header__navbar navbar navbar-expand-lg">
         <div className="container">
           <Link href="/">
@@ -312,8 +324,7 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              <li className="dropdown">
-                <Link href="/resources">
+              <li className="dropdown">                
                   <a
                     className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
                     role="button"
@@ -322,8 +333,7 @@ const Header = () => {
                     aria-expanded="false"
                   >
                     Resources
-                  </a>
-                </Link>
+                  </a>                
                 <div
                   className="c-site-header__list__item__dropdown-menu"
                   aria-labelledby="resources"

@@ -9,11 +9,15 @@ const PlatformServices = ({ blok }) => {
           <div class="c-partners__content">
             <div class="c-partners__hover">
               <figure class="c-partners__card__figure">
-                <img
-                  class="c-partners__card__image"
-                  src={blok.Icon?.filename}
-                  alt="consulting image"
-                />
+                <svg
+                  width="60"
+                  height="60"
+                  viewBox="0 0 60 60"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="c-partners__card__image"
+									dangerouslySetInnerHTML={{ __html: blok.IconPath }}
+                >	
+                </svg>
                 <figcaption class="c-partners__card__title">
                   {blok.Heading}
                 </figcaption>
