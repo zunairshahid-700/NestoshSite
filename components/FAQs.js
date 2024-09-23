@@ -1,5 +1,6 @@
 import React from "react";
 import { storyblokEditable } from "@storyblok/react";
+import { render } from "storyblok-rich-text-react-renderer";
 
 const FAQs = ({ blok }) => {
   return (
@@ -7,7 +8,7 @@ const FAQs = ({ blok }) => {
       <h3 className="c-solutions__nestosh__heading text-start">
         {blok?.Question}
       </h3>
-      <p className="c-solutions__nestosh__text text-start">{blok?.Answer}</p>
+      <p className="c-solutions__nestosh__text text-start">{render(blok?.Answer)}</p>
     </div>
   );
 };

@@ -267,7 +267,7 @@ const Header = () => {
                     </div>
                     <ul className="c-site-header__dropdown">
                       <li className="c-site-header__dropdown__list">
-                        <Link href="/salesforce-cross-cloud" passHref>
+                        <Link href="/platforms/salesforce" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Salesforce Cross-Cloud
                           </a>
