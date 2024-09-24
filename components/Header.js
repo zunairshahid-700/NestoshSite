@@ -266,6 +266,13 @@ const Header = () => {
                       </button>
                     </div>
                     <ul className="c-site-header__dropdown">
+                    <li className="c-site-header__dropdown__list">
+                        <Link href="/platforms/shopify" passHref>
+                          <a className="c-site-header__dropdown__list__item">
+                            Shopify
+                          </a>
+                        </Link>
+                      </li>
                       <li className="c-site-header__dropdown__list">
                         <Link href="/platforms/salesforce" passHref>
                           <a className="c-site-header__dropdown__list__item">
@@ -277,13 +284,6 @@ const Header = () => {
                         <Link href="/platforms/magento" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Magento
-                          </a>
-                        </Link>
-                      </li>
-                      <li className="c-site-header__dropdown__list">
-                        <Link href="/platforms/shopify" passHref>
-                          <a className="c-site-header__dropdown__list__item">
-                            Shopify
                           </a>
                         </Link>
                       </li>

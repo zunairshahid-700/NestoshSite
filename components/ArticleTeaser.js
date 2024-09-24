@@ -60,7 +60,7 @@ const ArticleTeaser = ({ article, articleRaw }) => {
             {article?.title}
           </a>
           <p className="c-blogs__content__card-text">
-            {render(article.content)}
+            {article?.subtitle}
           </p>
         </div>
       </div>
