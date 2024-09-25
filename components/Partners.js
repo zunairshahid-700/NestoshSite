@@ -43,9 +43,7 @@ const Partners = ({ blok }) => {
           className="c-partners__cards s-slick js-partners-carousel"
         >
           {blok.Partners?.map((nestedBlok) => (
-            <div key={nestedBlok._uid}>
-              <StoryblokComponent blok={nestedBlok} />
-            </div>
+              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
           ))}
         </Slider>
       </div>

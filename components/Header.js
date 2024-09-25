@@ -266,7 +266,7 @@ const Header = () => {
                       </button>
                     </div>
                     <ul className="c-site-header__dropdown">
-                    <li className="c-site-header__dropdown__list">
+                      <li className="c-site-header__dropdown__list">
                         <Link href="/platforms/shopify" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Shopify
@@ -324,16 +324,16 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              <li className="dropdown">                
-                  <a
-                    className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Resources
-                  </a>                
+              <li className="dropdown">
+                <a
+                  className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Resources
+                </a>
                 <div
                   className="c-site-header__list__item__dropdown-menu"
                   aria-labelledby="resources"
@@ -372,9 +372,7 @@ const Header = () => {
                     <ul className="c-site-header__dropdown">
                       <li className="c-site-header__dropdown__list">
                         <Link href="/about" passHref>
-                          <a
-                            className="c-site-header__dropdown__list__item"
-                          >
+                          <a className="c-site-header__dropdown__list__item">
                             About Company
                           </a>
                         </Link>
@@ -391,36 +389,28 @@ const Header = () => {
                       </Link>
                       <Link href="/partners" passHref>
                         <li className="c-site-header__dropdown__list">
-                          <a
-                            className="c-site-header__dropdown__list__item"
-                          >
+                          <a className="c-site-header__dropdown__list__item">
                             Our Partners
                           </a>
                         </li>
                       </Link>
                       <Link href="/sustainability" passHref>
                         <li className="c-site-header__dropdown__list">
-                          <a
-                            className="c-site-header__dropdown__list__item"
-                          >
+                          <a className="c-site-header__dropdown__list__item">
                             Sustainability
                           </a>
                         </li>
                       </Link>
                       <Link href="/events" passHref>
                         <li className="c-site-header__dropdown__list">
-                          <a
-                            className="c-site-header__dropdown__list__item"
-                          >
+                          <a className="c-site-header__dropdown__list__item">
                             News Event
                           </a>
                         </li>
                       </Link>
                       <Link href="/blogs" passHref>
                         <li className="c-site-header__dropdown__list">
-                          <a
-                            className="c-site-header__dropdown__list__item"
-                          >
+                          <a className="c-site-header__dropdown__list__item">
                             Blogs
                           </a>
                         </li>
@@ -429,6 +419,16 @@ const Header = () => {
                   </div>
                 </div>
               </li>
+              <Link href="/contact" passHref>
+                <li className="d-block d-lg-none zunair">
+                  <a
+                    className="nav-link c-site-header__list__item__link"
+                    role="button"
+                  >
+                    Contact
+                  </a>
+                </li>
+              </Link>
             </ul>
           </div>
           <div className="c-site-header__btn-wrap d-none d-lg-flex">

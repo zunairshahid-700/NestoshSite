@@ -25,6 +25,11 @@ import PlatformService from "../components/PlatformService";
 import PlatformServices from "../components/PlatformServices";
 import PlatformsSection from "../components/PlatformsSection";
 import PlatformsSectionsContent from "../components/PlatformsSectionsContent";
+import SalesforceExpertise from "../components/SalesforceExpertise";
+import Expertise from "../components/Expertise";
+import SalesforceSolutions from "../components/SalesforceSolutions";
+import Solutions from "../components/Solutions";
+
 
 
 const components = {
@@ -52,7 +57,11 @@ const components = {
   PlatformServiceSection: PlatformService,
   PlatformServices: PlatformServices,
   PlatformsSection: PlatformsSection,
-  PlatformsTech: PlatformsSectionsContent
+  PlatformsTech: PlatformsSectionsContent,
+  SalesforceExpertise: SalesforceExpertise,
+  Expertise: Expertise,
+  SalesforceSolutions: SalesforceSolutions,
+  Solutions: Solutions
 };
 
 storyblokInit({
