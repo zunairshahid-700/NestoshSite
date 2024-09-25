@@ -96,17 +96,17 @@ const Header = () => {
         element.addEventListener("click", toggleNavbar);
       });
     
-    if (window.innerWidth <= 768) {
-      document
-      .querySelectorAll(".c-site-header__list >li.dropdown a")
-      .forEach((element) => {
-        element.addEventListener("click", toggleDropdown);
+    document
+      .querySelectorAll(".c-site-header__list > li.dropdown button")
+      .forEach(function (element) {
+        element.addEventListener("click", function () {
+          const parentDiv = this.closest("div"); // Find the closest parent div
+          if (parentDiv && parentDiv.nextElementSibling) {
+            parentDiv.nextElementSibling.classList.toggle("show"); // Toggle class on the next sibling of the parent div
+          }
+        });
       });
-    }
 
-    // document
-    //   .querySelector(".navbar-collapse-back")
-    //   ?.addEventListener("click", closeDropdowns);
     document
     .querySelectorAll(".navbar-collapse-back")
     .forEach((element) => {
@@ -219,6 +219,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="dropdown">
+              <div class="d-flex">
                 <Link href="/platform" passHref>
                   <a
                     className="nav-link dropdown-toggle c-site-header__list__item__link"
@@ -230,6 +231,8 @@ const Header = () => {
                     Platforms
                   </a>
                 </Link>
+                <button class="nav-link dropdown-toggle button d-block d-lg-none"></button>
+                </div>
                 <div
                   className="c-site-header__list__item__dropdown-menu"
                   aria-labelledby="resources"
@@ -325,6 +328,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="dropdown">
+              <div class="d-flex">
                 <a
                   className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
                   role="button"
@@ -334,6 +338,8 @@ const Header = () => {
                 >
                   Resources
                 </a>
+                <button class="nav-link dropdown-toggle button d-block d-lg-none"></button>
+                </div>
                 <div
                   className="c-site-header__list__item__dropdown-menu"
                   aria-labelledby="resources"
