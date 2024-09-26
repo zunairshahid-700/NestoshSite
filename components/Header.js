@@ -5,9 +5,9 @@ import logo from "../public/assets/images/logo.svg";
 import globalIcon from "../public/assets/images/g-icon.svg";
 import globalIconW from "../public/assets/images/global-icon.svg";
 import togglerIcon from "../public/assets/images/toggler.svg";
-import singaporeFlag from "../public/assets/images/singapore.svg";
-import usaFlag from "../public/assets/images/usa.svg";
-import ukFlag from "../public/assets/images/uk.svg";
+import locationsIcon from "../public/assets/images/location.svg";
+import PhoneCallIcon from "../public/assets/images/phone.svg";
+import envelopeIcon from "../public/assets/images/MailBlack.svg";
 
 const Header = () => {
   useEffect(() => {
@@ -95,7 +95,7 @@ const Header = () => {
       .forEach((element) => {
         element.addEventListener("click", toggleNavbar);
       });
-    
+
     document
       .querySelectorAll(".c-site-header__list > li.dropdown button")
       .forEach(function (element) {
@@ -107,10 +107,18 @@ const Header = () => {
         });
       });
 
-    document
-    .querySelectorAll(".navbar-collapse-back")
-    .forEach((element) => {
-      element.addEventListener("click", closeDropdowns);
+    // document.querySelectorAll(".navbar-collapse-back").forEach((element) => {
+    //   element.addEventListener("click", closeDropdowns);
+    // });
+
+    document.querySelectorAll('.navbar-collapse-back').forEach(function(element) {
+      element.addEventListener('click', function() {
+          // Find the closest parent with the class .c-site-header__list__item__dropdown-menu
+          var dropdownMenu = this.closest('.c-site-header__list__item__dropdown-menu');
+          if (dropdownMenu) {
+              dropdownMenu.classList.remove('show'); // Remove the 'show' class
+          }
+      });
     });
 
     document.querySelectorAll(".js-global").forEach((element) => {
@@ -123,7 +131,7 @@ const Header = () => {
     // Cleanup event listeners on unmount
     return () => {
       document
-        .querySelectorAll(".c-site-header__list >li.dropdown")
+        .querySelectorAll(".c-site-header__list > li.dropdown")
         .forEach((element) => {
           element.removeEventListener("mouseenter", handleMouseEnter);
           element.removeEventListener("mouseleave", handleMouseLeave);
@@ -144,9 +152,7 @@ const Header = () => {
       // document
       //   .querySelector(".navbar-collapse-back")
       //   ?.removeEventListener("click", closeDropdowns);
-      document
-      .querySelectorAll(".navbar-collapse-back")
-      .forEach((element) => {
+      document.querySelectorAll(".navbar-collapse-back").forEach((element) => {
         element.removeEventListener("click", closeDropdowns);
       });
 
@@ -219,19 +225,19 @@ const Header = () => {
                 </Link>
               </li>
               <li className="dropdown">
-              <div class="d-flex">
-                <Link href="/platform" passHref>
-                  <a
-                    className="nav-link dropdown-toggle c-site-header__list__item__link"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Platforms
-                  </a>
-                </Link>
-                <button class="nav-link dropdown-toggle button d-block d-lg-none"></button>
+                <div className="d-flex">
+                  <Link href="/platform" passHref>
+                    <a
+                      className="nav-link dropdown-toggle c-site-header__list__item__link"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Platforms
+                    </a>
+                  </Link>
+                  <button className="nav-link dropdown-toggle button d-block d-lg-none"></button>
                 </div>
                 <div
                   className="c-site-header__list__item__dropdown-menu"
@@ -269,12 +275,131 @@ const Header = () => {
                       </button>
                     </div>
                     <ul className="c-site-header__dropdown">
-                      <li className="c-site-header__dropdown__list">
+                      {/* <li className="c-site-header__dropdown__list">
                         <Link href="/platforms/shopify" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Shopify
                           </a>
                         </Link>
+                      </li> */}
+                      <li className="c-site-header__dropdown__list">
+                        <div className="d-flex c-site-header__dropdown__list__item p-0">
+                        <Link href="/platforms/shopify" passHref>
+                          <a
+                            className="nav-link dropdown-toggle w-100"
+                            role="button"
+                            data-toggle="dropdown"
+                            aria-haspopup="true"
+                            aria-expanded="false"
+                          >
+                           Shopify
+                          </a>
+                          </Link>
+                          <button className="nav-link dropdown-toggle button d-block d-lg-none"></button>
+                        </div>
+                        <div
+                          className="c-site-header__list__item__dropdown-menu"
+                          aria-labelledby="resources"
+                        >
+                          <div className="c-site-header__list__item__dropdown-menu__wrap">
+                            <div className="navbar-collapse-close-wrap sub-wrap">
+                              <button
+                                className="navbar-collapse-back back-btn d-lg-none"
+                                type="button"
+                                aria-label="Close navigation"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  width="6"
+                                  height="12"
+                                  viewBox="0 0 6 12"
+                                  fill="none"
+                                >
+                                  <path
+                                    d="M0.5 11L5.5 6L0.5 1"
+                                    stroke="#000"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                </svg>
+                                Back
+                              </button>
+                              <button
+                                className="navbar-collapse-close d-lg-none"
+                                type="button"
+                                aria-label="Close navigation"
+                              >
+                                ×
+                              </button>
+                            </div>
+                            <ul className="c-site-header__dropdown">
+                              <li className="c-site-header__dropdown__list">
+                              <Link href="/platforms/shopify-services/shopify-store-development" passHref>
+                                <a
+                                  className="c-site-header__dropdown__list__item"
+                                >
+                                  Store development
+                                </a>
+                                </Link>
+                              </li>
+                              <li className="c-site-header__dropdown__list">
+                              <Link href="/platforms/shopify-services/shopify-plus-headless" passHref>
+                                <a
+                                  className="c-site-header__dropdown__list__item"
+                                >
+                                  Shopify Headless
+                                </a>
+                              </Link>
+                              </li>
+                              <li className="c-site-header__dropdown__list">
+                              <Link href="/platforms/shopify-services/migrating-to-shopify" passHref>
+                                <a
+                                  className="c-site-header__dropdown__list__item"
+                                >
+                                  Migrating to Shopify
+                                </a>
+                              </Link>
+                              </li>
+                              <li className="c-site-header__dropdown__list">
+                              <Link href="/platforms/shopify-services/shopify-app-development" passHref>
+                                <a
+                                  className="c-site-header__dropdown__list__item"
+                                >
+                                  App Development
+                                </a>
+                              </Link>
+                              </li>
+                              <li className="c-site-header__dropdown__list">
+                              <Link href="/platforms/shopify-services/tech-audit-and-consulting" passHref>
+                                <a
+                                  className="c-site-header__dropdown__list__item"
+                                >
+                                  Tech Audit and Consulting
+                                </a>
+                              </Link>
+                              </li>
+                              <li className="c-site-header__dropdown__list">
+                              <Link href="/platforms/shopify-services/ecommerce-branding" passHref>
+                                <a
+                                  className="c-site-header__dropdown__list__item"
+                                >
+                                  eCommerce Branding
+                                </a>
+                              </Link>
+                              </li>
+                              <li className="c-site-header__dropdown__list">
+                              <Link href="/platforms/shopify-services/shopify-store-support-service" passHref>
+                                <a
+                                  className="c-site-header__dropdown__list__item"
+                                >
+                                  Support-service
+                                </a>
+                              </Link>
+                              </li>
+                              
+                            </ul>
+                          </div>
+                        </div>
                       </li>
                       <li className="c-site-header__dropdown__list">
                         <Link href="/platforms/salesforce" passHref>
@@ -290,18 +415,31 @@ const Header = () => {
                           </a>
                         </Link>
                       </li>
-                      <li className="c-site-header__dropdown__list">
+                      {/* <li className="c-site-header__dropdown__list">
                         <Link href="/platforms/bigcommerce" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Bigcommerce
                           </a>
                         </Link>
-                      </li>
+                      </li> */}
                     </ul>
                   </div>
                 </div>
               </li>
               <li className="">
+                <Link href="/about" passHref>
+                  <a
+                    className="nav-link c-site-header__list__item__link"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    About
+                  </a>
+                </Link>
+              </li>
+              {/* <li className="">
                 <Link href="/history" passHref>
                   <a
                     className="nav-link c-site-header__list__item__link"
@@ -328,7 +466,7 @@ const Header = () => {
                 </Link>
               </li>
               <li className="dropdown">
-              <div class="d-flex">
+              <div className="d-flex">
                 <a
                   className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
                   role="button"
@@ -338,7 +476,7 @@ const Header = () => {
                 >
                   Resources
                 </a>
-                <button class="nav-link dropdown-toggle button d-block d-lg-none"></button>
+                <button className="nav-link dropdown-toggle button d-block d-lg-none"></button>
                 </div>
                 <div
                   className="c-site-header__list__item__dropdown-menu"
@@ -424,7 +562,7 @@ const Header = () => {
                     </ul>
                   </div>
                 </div>
-              </li>
+              </li> */}
               <Link href="/contact" passHref>
                 <li className="d-block d-lg-none zunair">
                   <a
@@ -462,26 +600,202 @@ const Header = () => {
                 ×
               </button>
             </div>
-            <ul className="c-site-header__country-list">
-              <li className="c-site-header__country-list__item">
-                <a href="#" className="c-site-header__country-list__item__link">
-                  <Image src={singaporeFlag} alt="Singapore" />
-                  Singapore
-                </a>
-              </li>
-              <li className="c-site-header__country-list__item">
-                <a href="#" className="c-site-header__country-list__item__link">
-                  <Image src={usaFlag} alt="United states" />
-                  United States
-                </a>
-              </li>
-              <li className="c-site-header__country-list__item">
-                <a href="#" className="c-site-header__country-list__item__link">
-                  <Image src={ukFlag} alt="United Kingdom" />
-                  United Kingdom
-                </a>
-              </li>
-            </ul>
+            <div className="container">
+              <h2 className="c-site-header__countries__title">
+                Following are our Locations to Visit{" "}
+                <Link href="/" passHref>
+                  Nestosh
+                </Link>
+              </h2>
+              <div className="c-site-header__countries">
+                <div className="c-site-header_country">
+                  <h3 className="c-site-header_country__title">USA</h3>
+                  <div className="c-site-header_country__info">
+                    <div className="c-site-header_country__info__map">
+                      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.8821530802793!2d-73.65143847595286!3d40.69053139991654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c27d8d1b202363%3A0x4fd21b43440826a9!2sNESTOSH%20LLC!5e0!3m2!1sen!2s!4v1725878940794!5m2!1sen!2s"></iframe>
+                    </div>
+                    <div className="c-site-header_country__info__contact">
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={locationsIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>
+                            522 MULBERRY LANE, WEST HEMPSTEAD, NY, 11552, USA
+                          </span>
+                        </div>
+                      </div>
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={PhoneCallIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>+1 (516) 489-0340</span>
+                        </div>
+                      </div>
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={envelopeIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>info@nestosh.com</span>
+                          <span>info@nestosh.com</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="c-site-header_country">
+                  <h3 className="c-site-header_country__title">USA</h3>
+                  <div className="c-site-header_country__info">
+                    <div className="c-site-header_country__info__map">
+                      <iframe
+                        className="c-maps-wrap__inner__map-wrap-width__frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2974.2188785170656!2d-87.59114552344137!3d41.802045070171864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2971c5e90715%3A0x302cddf77e7aac1e!2s5113%20S%20Harper%20Ave%20%232c%2C%20Chicago%2C%20IL%2060615%2C%20USA!5e0!3m2!1sen!2s!4v1714636643124!5m2!1sen!2s"
+                        allowFullScreen="allowfullscreen"
+                      ></iframe>
+                    </div>
+                    <div className="c-site-header_country__info__contact">
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={locationsIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>
+                            5113 S. Harper, Suite 2C, Chicago, Illinois, 60615,
+                            USA
+                          </span>
+                        </div>
+                      </div>
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={PhoneCallIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>+1 (847) 269-0608</span>
+                        </div>
+                      </div>
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={envelopeIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>info@nestosh.com</span>
+                          <span>info@nestosh.com</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="c-site-header_country">
+                  <h3 className="c-site-header_country__title">Pakistan</h3>
+                  <div className="c-site-header_country__info">
+                    <div className="c-site-header_country__info__map">
+                      <iframe
+                        className="c-maps-wrap__inner__map-wrap-width__frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3403.2167738274334!2d74.22037861462941!3d31.463222557110864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919037d73bfca8b%3A0xf481fa48ccef40fb!2sNestosh!5e0!3m2!1sen!2s!4v1625072326620!5m2!1sen!2s"
+                        allowFullScreen="allowfullscreen"
+                      ></iframe>
+                    </div>
+                    <div className="c-site-header_country__info__contact">
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={locationsIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>
+                            Plot No.23, Block J-3, Johar Town, Lahore, Pakistan
+                            54000
+                          </span>
+                        </div>
+                      </div>
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={PhoneCallIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>+92 (423) 5314787</span>
+                        </div>
+                      </div>
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={envelopeIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>info@nestosh.com</span>
+                          <span>info@nestosh.com</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="c-site-header_country">
+                  <h3 className="c-site-header_country__title">UAE</h3>
+                  <div className="c-site-header_country__info">
+                    <div className="c-site-header_country__info__map">
+                      <iframe
+                        className="c-maps-wrap__inner__map-wrap-width__frame"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3609.4234321262884!2d55.2819441!3d25.222659399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f435b517fef43%3A0xb7bd6505300d387d!2sNESTOSH%20Technologies%20LLC!5e0!3m2!1sen!2s!4v1715069506919!5m2!1sen!2s"
+                        allowFullScreen="allowfullscreen"
+                      ></iframe>
+                    </div>
+                    <div className="c-site-header_country__info__contact">
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={locationsIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>
+                            504 Saeed Tower 1, Sheikh Zayed Road, Dubai, UAE
+                          </span>
+                        </div>
+                      </div>
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={PhoneCallIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>+971 (50) 207-7739</span>
+                        </div>
+                      </div>
+                      <div className="c-site-header_country__info__contact__body">
+                        <div className="c-site-header_country__info__contact__body__icon">
+                          <figure className="mb-0">
+                            <Image src={envelopeIcon} alt="not found" />
+                          </figure>
+                        </div>
+                        <div className="c-site-header_country__info__contact__body__text">
+                          <span>info@nestosh.com</span>
+                          <span>info@nestosh.com</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </nav>

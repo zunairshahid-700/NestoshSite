@@ -22,7 +22,7 @@ const HeroSection = ({ blok }) => {
                 />
               </div>
               <div className="c-main-banner__content">
-                <div className="c-main-banner__content__left text-left">
+                <div className="c-main-banner__content__left text-start">
                   <h1 className="c-main-banner__heading">{blok.MainHeading}</h1>
                   <p className="c-main-banner__text">{blok.SubHeading}</p>
                 </div>

@@ -29,6 +29,8 @@ import SalesforceExpertise from "../components/SalesforceExpertise";
 import Expertise from "../components/Expertise";
 import SalesforceSolutions from "../components/SalesforceSolutions";
 import Solutions from "../components/Solutions";
+import ServicesSection from "../components/ServicesSection";
+import GlobalImage from "../components/global/GlobalImage";
 
 
 
@@ -61,7 +63,9 @@ const components = {
   SalesforceExpertise: SalesforceExpertise,
   Expertise: Expertise,
   SalesforceSolutions: SalesforceSolutions,
-  Solutions: Solutions
+  Solutions: Solutions,
+  ServicesSection: ServicesSection,
+  globalImage: GlobalImage
 };
 
 storyblokInit({
