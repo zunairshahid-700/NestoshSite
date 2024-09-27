@@ -4,7 +4,7 @@ const Maps = () => {
   return (
     <section className="c-maps-wrap">
       <div className="c-maps-wrap__inner">
-        <div className="c-maps-wrap__inner__map-wrap-width">
+        {/* <div className="c-maps-wrap__inner__map-wrap-width">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3936.8821530802793!2d-73.65143847595286!3d40.69053139991654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c27d8d1b202363%3A0x4fd21b43440826a9!2sNESTOSH%20LLC!5e0!3m2!1sen!2s!4v1725878940794!5m2!1sen!2s"
             className="c-maps-wrap__inner__map-wrap-width__frame"
@@ -14,7 +14,7 @@ const Maps = () => {
             scrolling="no"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-        </div>
+        </div> */}
         <div className="c-maps-wrap__inner__map-wrap-width">
           <iframe
             className="c-maps-wrap__inner__map-wrap-width__frame"

@@ -9,7 +9,7 @@ const HeroSection = ({ blok }) => {
         <div className="row">
           <div className="col-12">
             <div className="c-main-banner__wrap">
-              <div className="c-main-banner__image">
+              {/* <div className="c-main-banner__image">
                 <img
                   src={blok.DesktopBackgroundImage.filename}
                   alt="main banner"
@@ -20,13 +20,25 @@ const HeroSection = ({ blok }) => {
                   src={blok.MobileBackgroundImage.filename}
                   alt="mobile banner"
                 />
+              </div> */}
+              <div className="c-main-banner__video">
+                <video
+                  className="c-main-banner__video__src"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                >
+                  <source src="https://cdn.shopify.com/videos/c/o/v/b4a5d14579b74de8b38c2a398767cb97.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div className="c-main-banner__content">
                 <div className="c-main-banner__content__left text-start">
                   <h1 className="c-main-banner__heading">{blok.MainHeading}</h1>
                   <p className="c-main-banner__text">{blok.SubHeading}</p>
                 </div>
-                <div className="c-main-banner__content__right">
+                {/* <div className="c-main-banner__content__right">
                   <div className="c-main-banner__info">
                     <p className="c-main-banner__info__text pe-lg-2 me-lg-1">
                       <span className="c-main-banner__info__count colorPrimary">
@@ -42,7 +54,7 @@ const HeroSection = ({ blok }) => {
                       brands
                     </p>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
