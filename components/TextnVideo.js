@@ -8,11 +8,12 @@ const TextnVideo = ({blok}) => {
   return (
     <section className="c-solutions pt-0 pb-5" {...storyblokEditable(blok)}>
       <div className="container">
+      <h3 class="mb-4 text-start">{blok.Heading}</h3>
         <div className="row align-items-center">
           <div className="col-12 col-md-6">
             <iframe
               className="w-100"
-              height="315"
+              height="520"
               src={blok.Video}
               title="YouTube video player"
               frameborder="0"
@@ -23,19 +24,10 @@ const TextnVideo = ({blok}) => {
           </div>
           <div className="col-12 col-md-6 text-start">
             <div className="c-solutions__nestosh pt-4 pt-md-0 mb-0">
-              <h3 className="c-solutions__nestosh__heading">
-                {blok.Heading}
-              </h3>
-              <p className="c-solutions__nestosh__text">
-                {render(blok.Description)}
-              </p>
-              <a
-                href={blok.PdfLink}
-                className="btn btn-primary mt-3"
-                target="_blank"
-              >
-                {blok.ButtonText}
-              </a>
+            <img src={blok.Image?.filename} class="img-fluid" />
+                <div class="text-center mt-3">
+                    <a href={blok.PdfLink} class="btn btn-primary" target="_blank">{blok.ButtonText}</a>
+                </div>
             </div>
           </div>
         </div>
