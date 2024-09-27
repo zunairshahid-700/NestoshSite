@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       // Email options
       const mailOptions = {
         from: process.env.EMAIL_USER,
-        to: "zunair700@gmail.com", // Change this to the recipient's email
+        to: "hello@nestosh.com", // Change this to the recipient's email
         subject: subject || "New Contact Form Submission",
         text: `
           Name: ${name}

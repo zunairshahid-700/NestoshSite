@@ -31,6 +31,8 @@ import SalesforceSolutions from "../components/SalesforceSolutions";
 import Solutions from "../components/Solutions";
 import ServicesSection from "../components/ServicesSection";
 import GlobalImage from "../components/global/GlobalImage";
+import TextnVideo from "../components/TextnVideo";
+
 
 
 
@@ -65,7 +67,9 @@ const components = {
   SalesforceSolutions: SalesforceSolutions,
   Solutions: Solutions,
   ServicesSection: ServicesSection,
-  globalImage: GlobalImage
+  globalImage: GlobalImage,
+  TextnVideo: TextnVideo
+
 };
 
 storyblokInit({

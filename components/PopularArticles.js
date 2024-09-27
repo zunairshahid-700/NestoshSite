@@ -29,7 +29,8 @@ const PopularArticles = ({ blok }) => {
   
         console.log("Valid articles:", validArticles);
   
-        setArticles(validArticles);
+        // setArticles(validArticles);
+        setArticles(validArticles.reverse());
       } catch (error) {
         console.error("Error fetching articles:", error);
       }

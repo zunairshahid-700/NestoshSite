@@ -17,9 +17,9 @@ const Footer = () => {
         <div className="container">
           <div className="c-site-footer__info-bar">
             <div className="c-site-footer__info-bar__item">
-              <a href="mailto:info@nestosh.com">
+              <a href="mailto:hello@nestosh.com">
                 <img src={mailIcon} alt="mail" />
-                info@nestosh.com
+                hello@nestosh.com
               </a>
             </div>
             <div className="c-site-footer__info-bar__item">
@@ -29,15 +29,15 @@ const Footer = () => {
               </a>
             </div>
             <div className="c-site-footer__info-bar__item">
-              <a href="tel:+92 (423) 5314787">
-                <img src={pkFlag} alt="pk" />
-                +92 (423) 5314787
-              </a>
-            </div>
-            <div className="c-site-footer__info-bar__item">
               <a href="tel:+971 (50) 207-7739">
                 <img src={uaeFlag} alt="uae" />
                 +971 (50) 207-7739
+              </a>
+            </div>
+            <div className="c-site-footer__info-bar__item">
+              <a href="tel:+92 (423) 5314787">
+                <img src={pkFlag} alt="pk" />
+                +92 (423) 5314787
               </a>
             </div>
           </div>
@@ -80,25 +80,17 @@ const Footer = () => {
             <div className="c-site-footer__columns">
               <h4 className="c-site-footer__columns__title">Follow us</h4>
               <ul className="social-items">
-                <li>
-                  <Link href="https://www.facebook.com/nestoshllc/" passHref>
-                    <a className="c-site-footer__link facebook">Facebook</a>
-                  </Link>
+              <li>
+                    <a href="https://www.linkedin.com/company/nestosh/" target='blank' className="c-site-footer__link linkedin">LinkedIn</a>
                 </li>
                 <li>
-                  <Link href="https://x.com/nestosh" passHref>
-                    <a className="c-site-footer__link twitter">X</a>
-                  </Link>
+                    <a href="https://www.youtube.com/channel/UCRrx48Gsnj4N6RI13z-mqYQ" target='blank' className="c-site-footer__link youtube">YouTube</a>
                 </li>
                 <li>
-                  <Link href="https://www.instagram.com/nestoshllc/" passHref>
-                    <a className="c-site-footer__link instagram">Instagram</a>
-                  </Link>
+                    <a href="https://www.facebook.com/nestoshllc/" target='blank' className="c-site-footer__link facebook">Facebook</a>
                 </li>
                 <li>
-                  <Link href="https://www.linkedin.com/company/nestosh/" passHref>
-                    <a className="c-site-footer__link linkedin">LinkedIn</a>
-                  </Link>
+                    <a href="https://www.instagram.com/nestoshllc/" target='blank' className="c-site-footer__link instagram">Instagram</a>
                 </li>
               </ul>
             </div>
