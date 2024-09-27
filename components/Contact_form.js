@@ -1,7 +1,9 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
+import { Toast, ToastContainer } from 'react-bootstrap';
 
-const Contact_form = ({blok}) => {
+
+const Contact_form = ({ blok }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -10,6 +12,37 @@ const Contact_form = ({blok}) => {
     message: ""
   });
 
+  const [showToast, setShowToast] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+  const [toastVariant, setToastVariant] = useState(""); // 'success' or 'danger'
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const phoneRegex = /^[0-9]{10,15}$/; // Adjust the length to your needs
+
+  const validateForm = () => {
+    if (!formData.name || !formData.email || !formData.message) {
+      setToastMessage("Please fill out all required fields.");
+      setToastVariant("danger");
+      setShowToast(true);
+      console.log('Toast should be visible now:', showToast);
+      return false;
+    }
+    if (!emailRegex.test(formData.email)) {
+      setToastMessage("Please enter a valid email address.");
+      setToastVariant("danger");
+      setShowToast(true);
+      return false;
+    }
+    if (formData.phone && !phoneRegex.test(formData.phone)) {
+      setToastMessage("Please enter a valid phone number.");
+      setToastVariant("danger");
+      setShowToast(true);
+      return false;
+    }
+    return true;
+  };
+
+  // Handle input changes
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -17,8 +50,11 @@ const Contact_form = ({blok}) => {
     });
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!validateForm()) return;
+
     try {
       const response = await fetch("/api/sendMail", {
         method: "POST",
@@ -29,17 +65,23 @@ const Contact_form = ({blok}) => {
       });
 
       if (response.ok) {
-        alert("Email sent successfully");
+        setToastMessage("Email sent successfully.");
+        setToastVariant("success");
       } else {
-        alert("Failed to send email");
+        setToastMessage("Failed to send email.");
+        setToastVariant("danger");
       }
+      setShowToast(true);
     } catch (error) {
       console.error("Error:", error);
-      alert("Error sending email");
+      setToastMessage("Error sending email.");
+      setToastVariant("danger");
+      setShowToast(true);
     }
   };
 
   return (
+    <>
     <section className="c-contact__form" {...storyblokEditable(blok)}>
       <div className="container">
         <div className="row">
@@ -54,62 +96,74 @@ const Contact_form = ({blok}) => {
                 </p>
               </div>
               <div className="form-body">
-                <form action="" method="post">
+                <form onSubmit={handleSubmit}>
                   <div className="row">
                     <div className="col-lg-6 col-12">
-                      <div className="mb-4 input-wrapper  ">
+                      <div className="mb-4 input-wrapper">
                         <input
                           type="text"
-                          placeholder="Placeholder text"
-                          id="input1"
+                          name="name"
+                          value={formData.name}
+                          onChange={handleChange}
+                          placeholder="Your Name"
                           className="form-body__fields"
+                          required
                         />
-                        <label htmlFor="input1">Your Name</label>
-                      </div>  
+                        <label htmlFor="name">Your Name</label>
+                      </div>
                     </div>
                     <div className="col-lg-6 col-12">
                       <div className="mb-4 input-wrapper">
                         <input
-                          type="text"
-                          placeholder="Placeholder text"
-                          id="input1"
+                          type="email"
+                          name="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          placeholder="Your Email"
+                          className="form-body__fields"
+                          required
+                        />
+                        <label htmlFor="email">Your Email</label>
+                      </div>
+                    </div>
+                    <div className="col-lg-6 col-12">
+                      <div className="mb-4 input-wrapper">
+                        <input
+                          type="tel"
+                          name="phone"
+                          value={formData.phone}
+                          onChange={handleChange}
+                          placeholder="Phone Number"
                           className="form-body__fields"
                         />
-                        <label htmlFor="input1">Your Email</label>
+                        <label htmlFor="phone">Phone Number</label>
                       </div>
                     </div>
                     <div className="col-lg-6 col-12">
                       <div className="mb-4 input-wrapper">
                         <input
                           type="text"
-                          placeholder="Placeholder text"
-                          id="input1"
+                          name="subject"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          placeholder="Subject"
                           className="form-body__fields"
                         />
-                        <label htmlFor="input1">Phone Number</label>
-                      </div>
-                    </div>
-                    <div className="col-lg-6 col-12">
-                      <div className="mb-4 input-wrapper">
-                        <input
-                          type="text"
-                          placeholder="Placeholder text"
-                          id="input1"
-                          className="form-body__fields"
-                        />
-                        <label htmlFor="input1">Subject</label>
+                        <label htmlFor="subject">Subject</label>
                       </div>
                     </div>
                     <div className="col-12">
                       <div className="mb-4 input-wrapper">
                         <textarea
-                          name=""
+                          name="message"
+                          value={formData.message}
+                          onChange={handleChange}
                           rows="8"
-                          id="input1"
-                          placeholder="text"
+                          placeholder="Your Message"
                           className="form-body__fields"
+                          required
                         ></textarea>
-                        <label htmlFor="input1">Your Message</label>
+                        <label htmlFor="message">Your Message</label>
                       </div>
                     </div>
                   </div>
@@ -130,7 +184,10 @@ const Contact_form = ({blok}) => {
               <div className="location__wrap">
                 <div className="row">
                   {blok.Locations?.map((nestedBlok) => (
-                    <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+                    <StoryblokComponent
+                      blok={nestedBlok}
+                      key={nestedBlok._uid}
+                    />
                   ))}
                 </div>
               </div>
@@ -139,6 +196,18 @@ const Contact_form = ({blok}) => {
         </div>
       </div>
     </section>
+      <ToastContainer position="top-end" className="p-3">
+        <Toast
+          onClose={() => setShowToast(false)}
+          show={showToast}
+          bg={toastVariant}
+          delay={3000}
+          autohide
+        >
+          <Toast.Body>{toastMessage}</Toast.Body>
+        </Toast>
+      </ToastContainer>
+      </>
   );
 };
 

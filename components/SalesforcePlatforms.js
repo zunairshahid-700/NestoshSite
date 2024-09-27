@@ -20,6 +20,7 @@ const SalesforcePlatforms = ({ blok }) => {
           <div className="col-12 col-lg-8 c-services__service-col">
             <div className="row w-100">
               <div className="col-12 col-md-6">
+              {blok.Service1Image.filename ?
                 <div className="c-services__service">
                   <div className="c-services__service__circle">
                     <img
@@ -30,6 +31,9 @@ const SalesforcePlatforms = ({ blok }) => {
                   </div>
                   <p className="c-services__service__text">{blok.Service1}</p>
                 </div>
+               : ''
+              }
+              {blok.Service3Image.filename ?
                 <div className="c-services__service">
                   <div className="c-services__service__circle">
                     <img
@@ -40,6 +44,9 @@ const SalesforcePlatforms = ({ blok }) => {
                   </div>
                   <p className="c-services__service__text">{blok.Service3}</p>
                 </div>
+                : ''
+              }
+                {blok.Service5Image.filename ?
                 <div className="c-services__service">
                   <div className="c-services__service__circle">
                     <img
@@ -50,6 +57,9 @@ const SalesforcePlatforms = ({ blok }) => {
                   </div>
                   <p className="c-services__service__text">{blok.Service5}</p>
                 </div>
+                 : ''
+                }
+                {blok.Service7Image.filename ?
                 <div className="c-services__service">
                   <div className="c-services__service__circle">
                     <img
@@ -60,6 +70,9 @@ const SalesforcePlatforms = ({ blok }) => {
                   </div>
                   <p className="c-services__service__text">{blok.Service7}</p>
                 </div>
+                 : ''
+                }
+                {blok.Service9Image.filename ?
                 <div className="c-services__service">
                   <div className="c-services__service__circle">
                     <img
@@ -70,8 +83,24 @@ const SalesforcePlatforms = ({ blok }) => {
                   </div>
                   <p className="c-services__service__text">{blok.Service9}</p>
                 </div>
+                 : ''
+                }
+                {blok.Service11Image?.filename ?
+                <div className="c-services__service">
+                  <div className="c-services__service__circle">
+                    <img
+                      src={blok.Service11Image?.filename}
+                      className="c-services__service__image"
+                      alt="Sales logo"
+                    />
+                  </div>
+                  <p className="c-services__service__text">{blok.Service11}</p>
+                </div>
+                 : ''
+                }
               </div>
               <div className="col-12 col-md-6">
+              {blok.Service2Image.filename ?
                 <div className="c-services__service">
                   <div className="c-services__service__circle">
                     <img
@@ -82,6 +111,9 @@ const SalesforcePlatforms = ({ blok }) => {
                   </div>
                   <p className="c-services__service__text">{blok.Service2}</p>
                 </div>
+                : ''
+              }
+              {blok.Service4Image.filename ?
                 <div className="c-services__service">
                   <div className="c-services__service__circle">
                     <img
@@ -92,6 +124,9 @@ const SalesforcePlatforms = ({ blok }) => {
                   </div>
                   <p className="c-services__service__text">{blok.Service4}</p>
                 </div>
+                : ''
+              }
+                {blok.Service6Image.filename ?
                 <div className="c-services__service">
                   <div className="c-services__service__circle">
                     <img
@@ -102,16 +137,21 @@ const SalesforcePlatforms = ({ blok }) => {
                   </div>
                   <p className="c-services__service__text">{blok.Service6}</p>
                 </div>
-                <div className="c-services__service">
-                  <div className="c-services__service__circle">
-                    <img
-                      src={blok.Service8Image.filename}
-                      className="c-services__service__image"
-                      alt="Sales logo"
-                    />
+                : ''
+                }
+                {blok.Service8Image.filename ?
+                  <div className="c-services__service">
+                    <div className="c-services__service__circle">
+                      <img
+                        src={blok.Service8Image.filename}
+                        className="c-services__service__image"
+                        alt="Sales logo"
+                      />
+                    </div>
+                    <p className="c-services__service__text">{blok.Service8}</p>
                   </div>
-                  <p className="c-services__service__text">{blok.Service8}</p>
-                </div>
+                : ''
+                }
                 {blok.Service10Image.filename ? 
                   <div className="c-services__service mb-0">
                   <div className="c-services__service__circle">
