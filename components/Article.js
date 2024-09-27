@@ -2,21 +2,23 @@ import { render } from 'storyblok-rich-text-react-renderer';
 
 const Article = ({ blok }) => {
   return (
-    <section className="text-gray-600 body-font">
-      <div className="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
+    <section className="text-muted">
+      <div className="container d-flex flex-column justify-content-center align-items-center py-5 mt-5">
         <img
-          className="md:h-96 w-full mb-10 object-cover object-center rounded"
+          className="img-fluid mb-4 rounded"
           alt={blok.image?.alt}
           src={blok.image?.filename}
         />
-        <div className="text-center lg:w-2/3 w-full">
-          <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+        <div className="text-start w-100" style={{ maxWidth: "100%" }}>
+          <h1 className="display-4 mb-3 fw-bold text-dark">
             {blok.title}
           </h1>
-          <h1 className="title-font sm:text-3xl text-2xl mb-4 font-medium text-gray-600">
+          <h2 className="fs-3 mb-3 fw-medium text-secondary">
             {blok.subtitle}
-          </h1>
-          <div className="mb-8 leading-relaxed text-justify">{render(blok.content)}</div>
+          </h2>
+          <div className="mb-5 text-justify">
+            {render(blok.content)}
+          </div>
         </div>
       </div>
     </section>
