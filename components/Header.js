@@ -388,6 +388,15 @@ const Header = () => {
                               </Link>
                               </li>
                               <li className="c-site-header__dropdown__list">
+                              <Link href="/platforms/shopify-services/shopify-pos" passHref>
+                                <a
+                                  className="c-site-header__dropdown__list__item"
+                                >
+                                  POS Development Services
+                                </a>
+                              </Link>
+                              </li>
+                              <li className="c-site-header__dropdown__list">
                               <Link href="/platforms/shopify-services/shopify-store-support-service" passHref>
                                 <a
                                   className="c-site-header__dropdown__list__item"
