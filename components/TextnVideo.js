@@ -6,6 +6,7 @@ import { render } from "storyblok-rich-text-react-renderer";
 
 const TextnVideo = ({blok}) => {
   return (
+    
     <section className="c-solutions pt-0 pb-5" {...storyblokEditable(blok)}>
       <div className="container">
         <h3 class="mb-4 text-start">{blok.Heading}</h3>
