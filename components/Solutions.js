@@ -16,7 +16,7 @@ const Solutions = ({blok}) => {
               </figcaption>
             </figure>
             <p className="c-choose__card__text">
-              Our team includes 50+ Salesforce-certified professionals.
+              {blok.Description}
             </p>
           </div>
         </div>
