@@ -94,7 +94,7 @@ const Footer = () => {
                 </li>
               </ul>
             </div>
-            <div className="c-site-footer__columns invisible">
+            <div className="c-site-footer__columns invisible d-none d-lg-block">
               <h4 className="c-site-footer__columns__title">Resources</h4>
               <ul>
                 <li>

@@ -10,25 +10,20 @@ import PhoneCallIcon from "../public/assets/images/phone.svg";
 import envelopeIcon from "../public/assets/images/MailBlack.svg";
 
 const Header = () => {
+  const handleMouseEnter = (event) => {
+    if (document.querySelectorAll(".c-site-header__global-wrap.show").length === 0) {     
+      document.body.classList.add("open-navigation");
+    }
+  };
+
+  const handleMouseLeave = (event) => {
+    if (document.querySelectorAll(".c-site-header__global-wrap.show").length === 0) {
+      document.body.classList.remove("open-navigation");
+    }
+  };
+
   useEffect(() => {
-    const handleMouseEnter = (event) => {
-      if (
-        document.querySelectorAll(".c-site-header__global-wrap.show").length ===
-        0
-      ) {
-        document.body.classList.add("open-navigation");
-      }
-    };
-
-    const handleMouseLeave = (event) => {
-      if (
-        document.querySelectorAll(".c-site-header__global-wrap.show").length ===
-        0
-      ) {
-        document.body.classList.remove("open-navigation");
-      }
-    };
-
+   
     const toggleNavbar = () => {
       document.querySelector(".navbar-collapse").classList.toggle("show");
       document
@@ -84,7 +79,7 @@ const Header = () => {
 
     // Attach event listeners
     document
-      .querySelectorAll(".c-site-header__list__item.dropdown")
+      .querySelectorAll(".c-site-header__list > li.dropdown")
       .forEach((element) => {
         element.addEventListener("mouseenter", handleMouseEnter);
         element.addEventListener("mouseleave", handleMouseLeave);
@@ -318,8 +313,8 @@ const Header = () => {
                                   <path
                                     d="M0.5 11L5.5 6L0.5 1"
                                     stroke="#000"
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
                                   />
                                 </svg>
                                 Back
@@ -413,7 +408,7 @@ const Header = () => {
                       <li className="c-site-header__dropdown__list">
                         <Link href="/platforms/salesforce" passHref>
                           <a className="c-site-header__dropdown__list__item">
-                            Salesforce Cross-Cloud
+                            Salesforce
                           </a>
                         </Link>
                       </li>
@@ -573,7 +568,7 @@ const Header = () => {
                 </div>
               </li> */}
               <Link href="/contact" passHref>
-                <li className="d-block d-lg-none zunair">
+                <li className="d-block d-lg-none">
                   <a
                     className="nav-link c-site-header__list__item__link"
                     role="button"
