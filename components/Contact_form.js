@@ -107,7 +107,6 @@ const Contact_form = ({ blok }) => {
                           onChange={handleChange}
                           placeholder="Your Name"
                           className="form-body__fields"
-                          required
                         />
                         <label htmlFor="name">Your Name</label>
                       </div>
@@ -121,7 +120,6 @@ const Contact_form = ({ blok }) => {
                           onChange={handleChange}
                           placeholder="Your Email"
                           className="form-body__fields"
-                          required
                         />
                         <label htmlFor="email">Your Email</label>
                       </div>
@@ -161,7 +159,6 @@ const Contact_form = ({ blok }) => {
                           rows="8"
                           placeholder="Your Message"
                           className="form-body__fields"
-                          required
                         ></textarea>
                         <label htmlFor="message">Your Message</label>
                       </div>
