@@ -419,18 +419,18 @@ const Header = () => {
                           </a>
                         </Link>
                       </li>
-                      {/* <li className="c-site-header__dropdown__list">
+                      <li className="c-site-header__dropdown__list">
                         <Link href="/platforms/bigcommerce" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Bigcommerce
                           </a>
                         </Link>
-                      </li> */}
+                      </li>
                     </ul>
                   </div>
                 </div>
               </li>
-              <li className="">
+              {/* <li className="">
                 <Link href="/about" passHref>
                   <a
                     className="nav-link c-site-header__list__item__link"
@@ -442,9 +442,9 @@ const Header = () => {
                     About
                   </a>
                 </Link>
-              </li>
-              {/* <li className="">
-                <Link href="/history" passHref>
+              </li> */}
+              <li className="">
+                <Link href="/" passHref>
                   <a
                     className="nav-link c-site-header__list__item__link"
                     role="button"
@@ -566,7 +566,7 @@ const Header = () => {
                     </ul>
                   </div>
                 </div>
-              </li> */}
+              </li>
               <Link href="/contact" passHref>
                 <li className="d-block d-lg-none">
                   <a
