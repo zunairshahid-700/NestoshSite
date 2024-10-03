@@ -443,7 +443,7 @@ const Header = () => {
                   </a>
                 </Link>
               </li> */}
-              <li className="">
+              {/* <li className="">
                 <Link href="/" passHref>
                   <a
                     className="nav-link c-site-header__list__item__link"
@@ -455,7 +455,7 @@ const Header = () => {
                     Solutions
                   </a>
                 </Link>
-              </li>
+              </li> */}
               {/* <li className="">
                 <Link href="/products" passHref>
                   <a
@@ -469,6 +469,66 @@ const Header = () => {
                   </a>
                 </Link>
               </li> */}
+               <li className="dropdown">
+              <div className="d-flex">
+                <a
+                  className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
+                  role="button"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Solutions
+                </a>
+                <button className="nav-link dropdown-toggle button d-block d-lg-none"></button>
+                </div>
+                <div
+                  className="c-site-header__list__item__dropdown-menu"
+                  aria-labelledby="resources"
+                >
+                  <div className="c-site-header__list__item__dropdown-menu__wrap">
+                    <div className="navbar-collapse-close-wrap sub-wrap">
+                      <button
+                        className="navbar-collapse-back back-btn d-lg-none"
+                        type="button"
+                        aria-label="Close navigation"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="6"
+                          height="12"
+                          viewBox="0 0 6 12"
+                          fill="none"
+                        >
+                          <path
+                            d="M0.5 11L5.5 6L0.5 1"
+                            stroke="#000"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          />
+                        </svg>
+                        Back
+                      </button>
+                      <button
+                        className="navbar-collapse-close d-lg-none"
+                        type="button"
+                        aria-label="Close navigation"
+                      >
+                        ×
+                      </button>
+                    </div>
+                    <ul className="c-site-header__dropdown">
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/about" passHref>
+                          <a className="c-site-header__dropdown__list__item">
+                            Products
+                          </a>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </li>
               <li className="dropdown">
               <div className="d-flex">
                 <a

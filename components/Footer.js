@@ -55,12 +55,12 @@ const Footer = () => {
                     <a className="c-site-footer__link">Platforms</a>
                   </Link>
                 </li>
-                <li>
+                {/* <li>
                   <Link href="/about" passHref>
                     <a className="c-site-footer__link">About Company</a>
                   </Link>
-                </li>
-                {/* <li>
+                </li> */}
+                <li>
                   <Link href="/solutions" passHref>
                     <a className="c-site-footer__link">Solutions</a>
                   </Link>
@@ -69,7 +69,7 @@ const Footer = () => {
                   <Link href="/products" passHref>
                     <a className="c-site-footer__link">Products</a>
                   </Link>
-                </li> */}
+                </li>
                 <li>
                   <Link href="/contact" passHref>
                     <a className="c-site-footer__link">Contact us</a>
@@ -78,23 +78,6 @@ const Footer = () => {
               </ul>
             </div>
             <div className="c-site-footer__columns">
-              <h4 className="c-site-footer__columns__title">Follow us</h4>
-              <ul className="social-items">
-              <li>
-                    <a href="https://www.linkedin.com/company/nestosh/" target='blank' className="c-site-footer__link linkedin">LinkedIn</a>
-                </li>
-                <li>
-                    <a href="https://www.youtube.com/channel/UCRrx48Gsnj4N6RI13z-mqYQ" target='blank' className="c-site-footer__link youtube">YouTube</a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com/nestoshllc/" target='blank' className="c-site-footer__link facebook">Facebook</a>
-                </li>
-                <li>
-                    <a href="https://www.instagram.com/nestoshllc/" target='blank' className="c-site-footer__link instagram">Instagram</a>
-                </li>
-              </ul>
-            </div>
-            <div className="c-site-footer__columns invisible d-none d-lg-block">
               <h4 className="c-site-footer__columns__title">Resources</h4>
               <ul>
                 <li>
@@ -126,6 +109,23 @@ const Footer = () => {
                   <Link href="/blogs" passHref>
                     <a className="c-site-footer__link">Blogs</a>
                   </Link>
+                </li>
+              </ul>
+            </div>
+            <div className="c-site-footer__columns">
+              <h4 className="c-site-footer__columns__title">Follow us</h4>
+              <ul className="social-items">
+              <li>
+                    <a href="https://www.linkedin.com/company/nestosh/" target='blank' className="c-site-footer__link linkedin">LinkedIn</a>
+                </li>
+                <li>
+                    <a href="https://www.youtube.com/channel/UCRrx48Gsnj4N6RI13z-mqYQ" target='blank' className="c-site-footer__link youtube">YouTube</a>
+                </li>
+                <li>
+                    <a href="https://www.facebook.com/nestoshllc/" target='blank' className="c-site-footer__link facebook">Facebook</a>
+                </li>
+                <li>
+                    <a href="https://www.instagram.com/nestoshllc/" target='blank' className="c-site-footer__link instagram">Instagram</a>
                 </li>
               </ul>
             </div>
