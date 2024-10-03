@@ -11,19 +11,22 @@ import envelopeIcon from "../public/assets/images/MailBlack.svg";
 
 const Header = () => {
   const handleMouseEnter = (event) => {
-    if (document.querySelectorAll(".c-site-header__global-wrap.show").length === 0) {     
+    if (
+      document.querySelectorAll(".c-site-header__global-wrap.show").length === 0
+    ) {
       document.body.classList.add("open-navigation");
     }
   };
 
   const handleMouseLeave = (event) => {
-    if (document.querySelectorAll(".c-site-header__global-wrap.show").length === 0) {
+    if (
+      document.querySelectorAll(".c-site-header__global-wrap.show").length === 0
+    ) {
       document.body.classList.remove("open-navigation");
     }
   };
 
   useEffect(() => {
-   
     const toggleNavbar = () => {
       document.querySelector(".navbar-collapse").classList.toggle("show");
       document
@@ -106,15 +109,19 @@ const Header = () => {
     //   element.addEventListener("click", closeDropdowns);
     // });
 
-    document.querySelectorAll('.navbar-collapse-back').forEach(function(element) {
-      element.addEventListener('click', function() {
+    document
+      .querySelectorAll(".navbar-collapse-back")
+      .forEach(function (element) {
+        element.addEventListener("click", function () {
           // Find the closest parent with the class .c-site-header__list__item__dropdown-menu
-          var dropdownMenu = this.closest('.c-site-header__list__item__dropdown-menu');
+          var dropdownMenu = this.closest(
+            ".c-site-header__list__item__dropdown-menu"
+          );
           if (dropdownMenu) {
-              dropdownMenu.classList.remove('show'); // Remove the 'show' class
+            dropdownMenu.classList.remove("show"); // Remove the 'show' class
           }
+        });
       });
-    });
 
     document.querySelectorAll(".js-global").forEach((element) => {
       element.addEventListener("click", toggleGlobalWrap);
@@ -270,25 +277,18 @@ const Header = () => {
                       </button>
                     </div>
                     <ul className="c-site-header__dropdown">
-                      {/* <li className="c-site-header__dropdown__list">
-                        <Link href="/platforms/shopify" passHref>
-                          <a className="c-site-header__dropdown__list__item">
-                            Shopify
-                          </a>
-                        </Link>
-                      </li> */}
                       <li className="c-site-header__dropdown__list">
                         <div className="d-flex c-site-header__dropdown__list__item p-0">
-                        <Link href="/platforms/shopify" passHref>
-                          <a
-                            className="nav-link dropdown-toggle w-100"
-                            role="button"
-                            data-toggle="dropdown"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                          >
-                           Shopify
-                          </a>
+                          <Link href="/platforms/shopify" passHref>
+                            <a
+                              className="nav-link dropdown-toggle w-100"
+                              role="button"
+                              data-toggle="dropdown"
+                              aria-haspopup="true"
+                              aria-expanded="false"
+                            >
+                              Shopify
+                            </a>
                           </Link>
                           <button className="nav-link dropdown-toggle button d-block d-lg-none"></button>
                         </div>
@@ -329,78 +329,85 @@ const Header = () => {
                             </div>
                             <ul className="c-site-header__dropdown">
                               <li className="c-site-header__dropdown__list">
-                              <Link href="/platforms/shopify-services/shopify-store-development" passHref>
-                                <a
-                                  className="c-site-header__dropdown__list__item"
+                                <Link
+                                  href="/platforms/shopify-services/shopify-store-development"
+                                  passHref
                                 >
-                                  Store development
-                                </a>
+                                  <a className="c-site-header__dropdown__list__item">
+                                    Store development
+                                  </a>
                                 </Link>
                               </li>
                               <li className="c-site-header__dropdown__list">
-                              <Link href="/platforms/shopify-services/shopify-plus-headless" passHref>
-                                <a
-                                  className="c-site-header__dropdown__list__item"
+                                <Link
+                                  href="/platforms/shopify-services/shopify-plus-headless"
+                                  passHref
                                 >
-                                  Shopify Headless
-                                </a>
-                              </Link>
+                                  <a className="c-site-header__dropdown__list__item">
+                                    Shopify Headless
+                                  </a>
+                                </Link>
                               </li>
                               <li className="c-site-header__dropdown__list">
-                              <Link href="/platforms/shopify-services/migrating-to-shopify" passHref>
-                                <a
-                                  className="c-site-header__dropdown__list__item"
+                                <Link
+                                  href="/platforms/shopify-services/migrating-to-shopify"
+                                  passHref
                                 >
-                                  Migrating to Shopify
-                                </a>
-                              </Link>
+                                  <a className="c-site-header__dropdown__list__item">
+                                    Migrating to Shopify
+                                  </a>
+                                </Link>
                               </li>
                               <li className="c-site-header__dropdown__list">
-                              <Link href="/platforms/shopify-services/shopify-app-development" passHref>
-                                <a
-                                  className="c-site-header__dropdown__list__item"
+                                <Link
+                                  href="/platforms/shopify-services/shopify-app-development"
+                                  passHref
                                 >
-                                  App Development
-                                </a>
-                              </Link>
+                                  <a className="c-site-header__dropdown__list__item">
+                                    App Development
+                                  </a>
+                                </Link>
                               </li>
                               <li className="c-site-header__dropdown__list">
-                              <Link href="/platforms/shopify-services/tech-audit-and-consulting" passHref>
-                                <a
-                                  className="c-site-header__dropdown__list__item"
+                                <Link
+                                  href="/platforms/shopify-services/tech-audit-and-consulting"
+                                  passHref
                                 >
-                                  Tech Audit and Consulting
-                                </a>
-                              </Link>
+                                  <a className="c-site-header__dropdown__list__item">
+                                    Tech Audit and Consulting
+                                  </a>
+                                </Link>
                               </li>
                               <li className="c-site-header__dropdown__list">
-                              <Link href="/platforms/shopify-services/ecommerce-branding" passHref>
-                                <a
-                                  className="c-site-header__dropdown__list__item"
+                                <Link
+                                  href="/platforms/shopify-services/ecommerce-branding"
+                                  passHref
                                 >
-                                  eCommerce Branding
-                                </a>
-                              </Link>
+                                  <a className="c-site-header__dropdown__list__item">
+                                    eCommerce Branding
+                                  </a>
+                                </Link>
                               </li>
                               <li className="c-site-header__dropdown__list">
-                              <Link href="/platforms/shopify-services/shopify-pos" passHref>
-                                <a
-                                  className="c-site-header__dropdown__list__item"
+                                <Link
+                                  href="/platforms/shopify-services/shopify-pos"
+                                  passHref
                                 >
-                                  POS Development Services
-                                </a>
-                              </Link>
+                                  <a className="c-site-header__dropdown__list__item">
+                                    POS Development Services
+                                  </a>
+                                </Link>
                               </li>
                               <li className="c-site-header__dropdown__list">
-                              <Link href="/platforms/shopify-services/shopify-store-support-service" passHref>
-                                <a
-                                  className="c-site-header__dropdown__list__item"
+                                <Link
+                                  href="/platforms/shopify-services/shopify-store-support-service"
+                                  passHref
                                 >
-                                  Support-service
-                                </a>
-                              </Link>
+                                  <a className="c-site-header__dropdown__list__item">
+                                    Support-service
+                                  </a>
+                                </Link>
                               </li>
-                              
                             </ul>
                           </div>
                         </div>
@@ -430,57 +437,20 @@ const Header = () => {
                   </div>
                 </div>
               </li>
-              {/* <li className="">
-                <Link href="/about" passHref>
-                  <a
-                    className="nav-link c-site-header__list__item__link"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    About
-                  </a>
-                </Link>
-              </li> */}
-              {/* <li className="">
-                <Link href="/" passHref>
-                  <a
-                    className="nav-link c-site-header__list__item__link"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Solutions
-                  </a>
-                </Link>
-              </li> */}
-              {/* <li className="">
-                <Link href="/products" passHref>
-                  <a
-                    className="nav-link c-site-header__list__item__link"
-                    role="button"
-                    data-toggle="dropdown"
-                    aria-haspopup="true"
-                    aria-expanded="false"
-                  >
-                    Products
-                  </a>
-                </Link>
-              </li> */}
-               <li className="dropdown">
-              <div className="d-flex">
-                <a
-                  className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Solutions
-                </a>
-                <button className="nav-link dropdown-toggle button d-block d-lg-none"></button>
+              <li className="dropdown">
+                <div className="d-flex">
+                  <Link href="/solutions" passHref>
+                    <a
+                      className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
+                      role="button"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Solutions
+                    </a>
+                  </Link>
+                  <button className="nav-link dropdown-toggle button d-block d-lg-none"></button>
                 </div>
                 <div
                   className="c-site-header__list__item__dropdown-menu"
@@ -519,7 +489,7 @@ const Header = () => {
                     </div>
                     <ul className="c-site-header__dropdown">
                       <li className="c-site-header__dropdown__list">
-                        <Link href="/about" passHref>
+                        <Link href="/products" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Products
                           </a>
@@ -530,17 +500,17 @@ const Header = () => {
                 </div>
               </li>
               <li className="dropdown">
-              <div className="d-flex">
-                <a
-                  className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Resources
-                </a>
-                <button className="nav-link dropdown-toggle button d-block d-lg-none"></button>
+                <div className="d-flex">
+                  <a
+                    className="nav-link dropdown-toggle c-site-header__list__item__link text-decoration-none"
+                    role="button"
+                    data-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                  >
+                    Resources
+                  </a>
+                  <button className="nav-link dropdown-toggle button d-block d-lg-none"></button>
                 </div>
                 <div
                   className="c-site-header__list__item__dropdown-menu"
@@ -579,50 +549,47 @@ const Header = () => {
                     </div>
                     <ul className="c-site-header__dropdown">
                       <li className="c-site-header__dropdown__list">
-                        <Link href="/about" passHref>
+                        <Link href="/about-us" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             About Company
                           </a>
                         </Link>
                       </li>
-                      <Link href="/carerrs" passHref>
-                        <li className="c-site-header__dropdown__list">
-                          <a
-                            className="c-site-header__dropdown__list__item"
-                            href="#"
-                          >
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/carerrs" passHref>
+                          <a className="c-site-header__dropdown__list__item">
                             Career
                           </a>
-                        </li>
-                      </Link>
-                      <Link href="/partners" passHref>
-                        <li className="c-site-header__dropdown__list">
+                        </Link>
+                      </li>
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/partners" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Our Partners
                           </a>
-                        </li>
-                      </Link>
-                      <Link href="/sustainability" passHref>
-                        <li className="c-site-header__dropdown__list">
+                        </Link>
+                      </li>
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/sustainability" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Sustainability
                           </a>
-                        </li>
-                      </Link>
-                      <Link href="/events" passHref>
-                        <li className="c-site-header__dropdown__list">
+                        </Link>
+                      </li>
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/events" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             News Event
                           </a>
-                        </li>
-                      </Link>
-                      <Link href="/blogs" passHref>
-                        <li className="c-site-header__dropdown__list">
+                        </Link>
+                      </li>
+                      <li className="c-site-header__dropdown__list">
+                        <Link href="/blogs" passHref>
                           <a className="c-site-header__dropdown__list__item">
                             Blogs
                           </a>
-                        </li>
-                      </Link>
+                        </Link>
+                      </li>
                     </ul>
                   </div>
                 </div>

@@ -51,7 +51,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/platforms" passHref>
+                  <Link href="/platform" passHref>
                     <a className="c-site-footer__link">Platforms</a>
                   </Link>
                 </li>
@@ -81,13 +81,13 @@ const Footer = () => {
               <h4 className="c-site-footer__columns__title">Resources</h4>
               <ul>
                 <li>
-                  <Link href="/about" passHref>
+                  <Link href="/about-us" passHref>
                     <a className="c-site-footer__link">About Company</a>
                   </Link>
                 </li>
                 <li>
-                  <Link href="/career" passHref>
-                    <a className="c-site-footer__link">Career</a>
+                  <Link href="/carerrs" passHref>
+                    <a className="c-site-footer__link">Careers</a>
                   </Link>
                 </li>
                 <li>
@@ -101,7 +101,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/news-events" passHref>
+                  <Link href="/events" passHref>
                     <a className="c-site-footer__link">News Event</a>
                   </Link>
                 </li>

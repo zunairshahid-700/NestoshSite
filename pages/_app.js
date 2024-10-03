@@ -32,6 +32,8 @@ import Solutions from "../components/Solutions";
 import ServicesSection from "../components/ServicesSection";
 import GlobalImage from "../components/global/GlobalImage";
 import TextnVideo from "../components/TextnVideo";
+import ComingSoon from "../components/ComingSoon";
+
 
 
 
@@ -68,7 +70,8 @@ const components = {
   Solutions: Solutions,
   ServicesSection: ServicesSection,
   globalImage: GlobalImage,
-  TextnVideo: TextnVideo
+  TextnVideo: TextnVideo,
+  ComingSoon: ComingSoon
 
 };
 

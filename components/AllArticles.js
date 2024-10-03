@@ -10,26 +10,29 @@ const AllArticles = ({ blok }) => {
         starts_with: 'blog',
         is_startpage: false,
       });
-
       setArticles((prev) =>
-        data.stories.map((article) => {
-          article.content.slug = article.slug;
-          return article;
-        })
+        data.stories
+          .filter((article) => article.slug !== "blogs") // Exclude the blog page
+          .map((article) => {
+            article.content.slug = article.slug;
+            return article;
+          })
       );
     };
     getArticles();
   }, []);
   return (
     <>
-      <p className="text-3xl">{blok.title}</p>
+      <p className="fs-1">{blok.title}</p>
       <div
-        className="grid w-full grid-cols-1 gap-6 mx-auto lg:grid-cols-3   lg:px-24 md:px-16"
+        className="row w-100 g-3 mx-auto px-lg-5 px-md-4"
         {...storyblokEditable(blok)}
       >
         {articles[0] &&
           articles.map((article) => (
-            <ArticleTeaser article={article.content} key={article.uuid} />
+            <div className="col-lg-4 col-md-6" key={article.uuid}>
+              <ArticleTeaser article={article.content} />
+            </div>
           ))}
       </div>
     </>
