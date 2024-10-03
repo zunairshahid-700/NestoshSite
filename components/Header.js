@@ -456,7 +456,7 @@ const Header = () => {
                   </a>
                 </Link>
               </li>
-              <li className="">
+              {/* <li className="">
                 <Link href="/products" passHref>
                   <a
                     className="nav-link c-site-header__list__item__link"
@@ -468,7 +468,7 @@ const Header = () => {
                     Products
                   </a>
                 </Link>
-              </li>
+              </li> */}
               <li className="dropdown">
               <div className="d-flex">
                 <a
