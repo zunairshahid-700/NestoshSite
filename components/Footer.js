@@ -51,7 +51,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/platforms" passHref>
+                  <Link href="/platform" passHref>
                     <a className="c-site-footer__link">Platforms</a>
                   </Link>
                 </li>
