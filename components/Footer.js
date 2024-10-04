@@ -56,7 +56,7 @@ const Footer = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/about" passHref>
+                  <Link href="/about-us" passHref>
                     <a className="c-site-footer__link">About Company</a>
                   </Link>
                 </li>
@@ -98,7 +98,7 @@ const Footer = () => {
               <h4 className="c-site-footer__columns__title">Resources</h4>
               <ul>
                 <li>
-                  <Link href="/about" passHref>
+                  <Link href="/about-us" passHref>
                     <a className="c-site-footer__link">About Company</a>
                   </Link>
                 </li>

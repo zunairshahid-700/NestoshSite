@@ -279,7 +279,7 @@ const Header = () => {
                       </li> */}
                       <li className="c-site-header__dropdown__list">
                         <div className="d-flex c-site-header__dropdown__list__item p-0">
-                        <Link href="/platforms/shopify" passHref>
+                        <Link href="/platforms/shopifyb" passHref>
                           <a
                             className="nav-link dropdown-toggle w-100"
                             role="button"
@@ -431,7 +431,7 @@ const Header = () => {
                 </div>
               </li>
               <li className="">
-                <Link href="/about" passHref>
+                <Link href="/about-us" passHref>
                   <a
                     className="nav-link c-site-header__list__item__link"
                     role="button"
