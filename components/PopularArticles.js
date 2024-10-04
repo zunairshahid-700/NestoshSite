@@ -93,7 +93,7 @@ const PopularArticles = ({ blok }) => {
                         />
                       );
                     }
-                    return null; // Return null if the article is not valid
+                    return null;
                   })}
                 </Slider>
               </div>
