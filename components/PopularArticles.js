@@ -43,7 +43,7 @@ const PopularArticles = ({ blok }) => {
   const settings = {
     arrows: false,
     dots: false,
-    infinite: false,
+    infinite: true,
     slidesToShow: 3,
     speed: 300,
     responsive: [
