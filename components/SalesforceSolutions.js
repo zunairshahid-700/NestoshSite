@@ -12,10 +12,10 @@ const SalesforceSolutions = ({ blok }) => {
           {blok.TopSolutions?.map((nestedBlok) => (
             <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
           ))}
-          <div class="col-lg-6 col-md-12 col-12 order-lg-2 order-1">
-            <div class="c-choose__SolutionHead">
-              <h3 class="c-choose__SolutionHeading">{blok.Heading}</h3>
-              <p class="c-choose__SolutionText">{blok.SubHeading}</p>
+          <div className="col-lg-6 col-md-12 col-12 order-lg-2 order-1">
+            <div className="c-choose__SolutionHead">
+              <h3 className="c-choose__SolutionHeading">{blok.Heading}</h3>
+              <p className="c-choose__SolutionText">{blok.SubHeading}</p>
             </div>
           </div>
         </div>

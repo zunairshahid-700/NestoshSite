@@ -9,7 +9,7 @@ const TextnVideo = ({blok}) => {
     
     <section className="c-solutions pt-0 pb-5" {...storyblokEditable(blok)}>
       <div className="container">
-        <h3 class="mb-4 text-start">{blok.Heading}</h3>
+        <h3 className="mb-4 text-start">{blok.Heading}</h3>
         <div className="row align-items-center">
           <div className="col-12 col-md-6">
             <video className="w-100" controls>
@@ -32,13 +32,13 @@ const TextnVideo = ({blok}) => {
           </div>
           <div className="col-12 col-md-6 text-start">
             <div className="c-solutions__nestosh pt-4 pt-md-0 mb-0">
-              <img src={blok.Image?.filename} class="img-fluid" style={{ height: "400px" }} />
+              <img src={blok.Image?.filename} className="img-fluid" style={{ height: "400px" }} />
             </div>
           </div>
         </div>
         <div className="col-12">
-          <div class="text-center mt-3">
-            <a href={blok.PdfLink} class="btn btn-primary" target="_blank">
+          <div className="text-center mt-3">
+            <a href={blok.PdfLink} className="btn btn-primary" target="_blank">
               {blok.ButtonText}
             </a>
           </div>
