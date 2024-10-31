@@ -2,7 +2,7 @@ import ArticleTeaser from './ArticleTeaser';
 import { getStoryblokApi, storyblokEditable } from '@storyblok/react';
 import { useState, useEffect } from 'react';
 const AllArticles = ({ blok }) => {
-  const [articles, setArticles] = useState([]);
+  const [articles, setArticles] = useState([]) ;
   useEffect(() => {
     const getArticles = async () => {
       const storyblokApi = getStoryblokApi();
