@@ -1,15 +1,13 @@
 import React from 'react';
-import { storyblokEditable } from "@storyblok/react";
 import SectionTitle from './global/SectionTitle';
-import { render } from 'storyblok-rich-text-react-renderer';
 
-const WhoWeAre = ({blok}) => {
+const WhoWeAre = ({ title, subtitle }) => {
   return (
-      <section className="c-about" {...storyblokEditable(blok)}>
+      <section className="c-about">
         <div className="container">
           <div className="c-about__inner">
-            <SectionTitle cssClass="c-about__title" title={blok.Title} />
-            <p className="c-about__text">{render(blok.SubHeading)}</p>
+            <SectionTitle cssClass="c-about__title" title={title} />
+            <p className="c-about__text">{subtitle}</p>
           </div>
         </div>
       </section>

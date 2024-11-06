@@ -1,10 +1,9 @@
 import React from "react";
-import { storyblokEditable } from "@storyblok/react";
 import Image from "next/image";
 
-const HeroSection = ({ blok }) => {
+const HeroSection = ({ title, subtitle }) => {
   return (
-    <section className="c-main-banner" {...storyblokEditable(blok)}>
+    <section className="c-main-banner">
       <div className="container c-main-banner__container">
         <div className="row">
           <div className="col-12">
@@ -35,8 +34,8 @@ const HeroSection = ({ blok }) => {
               </div>
               <div className="c-main-banner__content">
                 <div className="c-main-banner__content__left text-start">
-                  <h1 className="c-main-banner__heading">{blok.MainHeading}</h1>
-                  <p className="c-main-banner__text">{blok.SubHeading}</p>
+                  <h1 className="c-main-banner__heading">{title}</h1>
+                  <p className="c-main-banner__text">{subtitle}</p>
                 </div>
                 {/* <div className="c-main-banner__content__right">
                   <div className="c-main-banner__info">
