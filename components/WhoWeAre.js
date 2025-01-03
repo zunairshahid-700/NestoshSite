@@ -7,7 +7,7 @@ const WhoWeAre = ({ title, subtitle }) => {
         <div className="container">
           <div className="c-about__inner">
             <SectionTitle cssClass="c-about__title" title={title} />
-            <p className="c-about__text">{subtitle}</p>
+            <div className="c-about__text" dangerouslySetInnerHTML={{ __html: subtitle }} />
           </div>
         </div>
       </section>

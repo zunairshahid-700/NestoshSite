@@ -1,17 +1,18 @@
 import React from 'react';
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import SectionTitle from './global/SectionTitle';
 
 
-const Customers = ({blok}) => {
+const Customers = ({title, customers}) => {
   return (
-      <section className="c-portfolio" {...storyblokEditable(blok)}>
+      <section className="c-portfolio">
         <div className="container">
-            <SectionTitle cssClass="c-portfolio__heading" title={blok.Title}/>
+            <SectionTitle cssClass="c-portfolio__heading" title={title}/>
         </div>
         <div className="c-portfolio__logos">
-          {blok.Client.map((nestedBlok) => (
-            <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+          {customers.map((customer) => (
+            <div className="c-portfolio__logo" key={customer.id}>
+                <img src={customer.icon} className="c-portfolio__logo-image img-fluid" alt={customer.id}/>
+            </div>
           ))}
         </div>
     </section>

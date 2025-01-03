@@ -1,9 +1,8 @@
 import React from "react";
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import SectionTitle from "./global/SectionTitle";
 import Slider from "react-slick";
 
-const Partners = ({ blok }) => {
+const Partners = ({ title, subtitle, partners}) => {
   const settings = {
     arrows: false,
     dots: false,
@@ -29,21 +28,28 @@ const Partners = ({ blok }) => {
       }
   ]
   };
-  
+
   return (
-    <section className="c-partners" {...storyblokEditable(blok)}>
+    <section className="c-partners" >
       <div className="container">
         <div className="c-partners__inner">
-          <SectionTitle cssClass="c-partners__title" title={blok.Title} />
-          <p className="c-partners__text">{blok.SubHeading}</p>
+          <SectionTitle cssClass="c-partners__title" title={title} />
+          <p className="c-partners__text">{subtitle}</p>
         </div>
 
         <Slider
           {...settings}
           className="c-partners__cards s-slick js-partners-carousel"
         >
-          {blok.Partners?.map((nestedBlok) => (
-              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+          {partners?.map((partner) => (
+            <div className="c-partners__card"  key={partner.id}>
+              <div className="c-partners__hover">
+              <figure className="c-partners__card__figure">
+                <img className="c-partners__card__image" src={partner.icon} alt={partner.title}/>
+                <figcaption className="c-partners__card__title">{partner.title}</figcaption>
+              </figure><p className="c-partners__card__text">{partner.desc}</p>
+              </div>
+              </div>
           ))}
         </Slider>
       </div>

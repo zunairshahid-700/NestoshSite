@@ -1,49 +1,12 @@
-import { getStoryblokApi, storyblokEditable } from "@storyblok/react";
-import { useEffect, useState } from "react";
 import ArticleTeaser from "./ArticleTeaser";
 import SectionTitle from "./global/SectionTitle";
 import Slider from "react-slick";
 
-const PopularArticles = ({ blok }) => {
-  const [articles, setArticles] = useState([]);
-
-  useEffect(() => {
-    const fetchArticles = async () => {
-      const storyblokApi = getStoryblokApi();
-  
-      try {
-        const { data } = await storyblokApi.get('cdn/stories', {
-          version: 'published',
-          resolve_relations: 'articles',
-        });
-        
-        console.log("Fetched articles:", data.stories);
-  
-        // Ensure the IDs in blok.articles are correct and exist
-        console.log("IDs in blok.articles:", blok.articles);
-  
-        // Filter articles
-        const validArticles = data.stories.filter(article => 
-          blok.articles.includes(article.uuid)
-        );
-  
-        console.log("Valid articles:", validArticles);
-  
-        // setArticles(validArticles);
-        setArticles(validArticles.reverse());
-      } catch (error) {
-        console.error("Error fetching articles:", error);
-      }
-    };
-  
-    fetchArticles();
-  }, [blok.articles]);
-  
-
+const PopularArticles = ({ title, desc, articles }) => {
   const settings = {
     arrows: false,
     dots: false,
-    infinite: false,
+    infinite: true,
     slidesToShow: 3,
     speed: 300,
     responsive: [
@@ -67,7 +30,7 @@ const PopularArticles = ({ blok }) => {
   };
 
   return (
-    <section className="c-blogs" {...storyblokEditable(blok)}>
+    <section className="c-blogs">
       <div className="container">
         <div className="row">
           <div className="col-12">
@@ -75,26 +38,15 @@ const PopularArticles = ({ blok }) => {
               <div className="c-blogs__header">
                 <SectionTitle
                   cssclass="c-blogs__header__heading"
-                  title={blok.headline}
+                  title={title}
                 />
-                <p className="c-blogs__header__paragraph">{blok.SubHeading}</p>
+                <p className="c-blogs__header__paragraph">{desc}</p>
               </div>
               <div className="c-blogs__body">
                 <Slider {...settings} className="s-slick js-blog-carousel">
-                  {articles.map((article) => {
-                    // Ensure that article has valid content
-                    if (article && article.content && article.slug) {
-                      article.content.slug = article.slug;
-                      return (
-                        <ArticleTeaser
-                          article={article.content}
-                          key={article.uuid}
-                          articleRaw={article}
-                        />
-                      );
-                    }
-                    return null;
-                  })}
+                  {articles.map((article) => (
+                    <ArticleTeaser {...article} key={article.id} />
+                  ))}
                 </Slider>
               </div>
             </div>

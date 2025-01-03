@@ -2,8 +2,9 @@ import React from "react";
 
 const SalesforcePlatforms = ({ sectionTitle, mainImage, features }) => {
   // Split features into left and right columns
-  const leftColumnFeatures = features.filter((_, index) => index % 2 === 0);
-  const rightColumnFeatures = features.filter((_, index) => index % 2 !== 0);
+  const middleIndex = Math.ceil(features.length / 2);
+  const leftColumnFeatures = features.slice(0, middleIndex);
+  const rightColumnFeatures = features.slice(middleIndex);
 
   return (
     <section className="c-services">
@@ -26,12 +27,12 @@ const SalesforcePlatforms = ({ sectionTitle, mainImage, features }) => {
                   <div key={feature.id} className="c-services__service">
                     <div className="c-services__service__circle">
                       <img
-                        src={feature.image}
+                        src={feature.icon}
                         className="c-services__service__image"
-                        alt={feature.text}
+                        alt={feature.title}
                       />
                     </div>
-                    <p className="c-services__service__text">{feature.text}</p>
+                    <p className="c-services__service__text">{feature.title}</p>
                   </div>
                 ))}
               </div>
@@ -40,12 +41,12 @@ const SalesforcePlatforms = ({ sectionTitle, mainImage, features }) => {
                   <div key={feature.id} className="c-services__service">
                     <div className="c-services__service__circle">
                       <img
-                        src={feature.image}
+                        src={feature.icon}
                         className="c-services__service__image"
-                        alt={feature.text}
+                        alt={feature.title}
                       />
                     </div>
-                    <p className="c-services__service__text">{feature.text}</p>
+                    <p className="c-services__service__text">{feature.title}</p>
                   </div>
                 ))}
               </div>

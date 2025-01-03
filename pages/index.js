@@ -3,7 +3,10 @@ import Layout from '../components/Layout';
 import HeroSection from '../components/HeroSection';
 import WhoWeAre from '../components/WhoWeAre';
 import SalesforcePlatforms from '../components/SalesforcePlatforms';
-import { heroData, Whoweare, ShopifyServices } from '../constants/data';
+import Partners from '../components/Partners'
+import Customers from '../components/Customers'
+import PopularArticles from '../components/PopularArticles'
+import { heroData, Whoweare, ShopifyServices, HomePartners, SalesforceServices, CustomersData, popuparArticles } from '../constants/data';
 export default function Home() {
   return (
     <div>
@@ -16,6 +19,10 @@ export default function Home() {
           <HeroSection {...heroData} />
           <WhoWeAre {...Whoweare} />
           <SalesforcePlatforms {...ShopifyServices} />
+          <Partners {...HomePartners}/>
+          <SalesforcePlatforms {...SalesforceServices} />
+          <Customers {...CustomersData}/>
+          <PopularArticles {...popuparArticles}/>
         </main>
       </Layout>
     </div>
