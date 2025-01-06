@@ -1,4 +1,5 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react';
+import Link from 'next/link';
 import React from 'react';
 
 
@@ -9,9 +10,11 @@ const SalesforceExpertise = ({blok}) => {
         <div className="c-choose__head">
           <h3 className="c-choose__heading">{blok.Heading}</h3>
           <p className="c-choose__text">
-            <a className="c-choose__text__link" href="#">
-              Contact us
-            </a>
+              <Link href="/contact" passHref>
+              <a className="c-choose__text__link">
+                Contact us
+              </a>
+              </Link>
             {blok.SubHeading}
           </p>
         </div>

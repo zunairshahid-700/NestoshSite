@@ -14,7 +14,7 @@ const PlatformService = ({ blok }) => {
     >
       <div className="container">
         <div className="c-partners__inner">
-          <SectionTitle cssclass="c-partners__title" title={blok?.Heading} />
+          <SectionTitle cssClass="c-partners__title" title={blok?.Heading} />
         </div>
         <div className="c-partners__cards">
           <div className="row">
