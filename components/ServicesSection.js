@@ -11,7 +11,7 @@ const ServicesSection = ({ blok }) => {
     >
       <div className="container">
         <div className="c-partners__inner">
-          <SectionTitle cssclassName="c-partners__title" title={blok?.Heading} />
+          <SectionTitle cssClass="c-partners__title" title={blok?.Heading} />
           <p className="c-partners__text">{blok.SubHeading}</p>
         </div>
         <div className="c-partners__cards pb-5">
