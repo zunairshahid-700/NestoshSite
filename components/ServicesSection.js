@@ -1,25 +1,22 @@
-import { storyblokEditable, StoryblokComponent } from "@storyblok/react";
 import React from "react";
 import SectionTitle from "./global/SectionTitle";
+import PlatformServices from '../components/PlatformServices'
 
 
-const ServicesSection = ({ blok }) => {
+const ServicesSection = ({ title, description, services }) => {
   return (
-    <section
-      className="c-partners c-partners--services"
-      {...storyblokEditable(blok)}
-    >
+    <section className={`c-partners c-partners--services`}>
       <div className="container">
         <div className="c-partners__inner">
-          <SectionTitle cssclassName="c-partners__title" title={blok?.Heading} />
-          <p className="c-partners__text">{blok.SubHeading}</p>
+          <SectionTitle cssClass="c-partners__title" title={title} />
         </div>
         <div className="c-partners__cards pb-5">
           <div className="row justify-content-center">
-            {blok.Services?.map((nestedBlok) => (
-              <StoryblokComponent blok={nestedBlok} key={nestedBlok._uid} />
+            {services.map((service, index) => (
+              <PlatformServices service={service} key={index} />
             ))}
           </div>
+          <p className="c-partners__text" dangerouslySetInnerHTML={{ __html: description }}></p>
         </div>
       </div>
     </section>

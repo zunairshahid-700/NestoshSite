@@ -18,51 +18,51 @@ export default function Page({ story }) {
       </Head>
 
       <Layout>
-        <StoryblokComponent blok={story.content} />
+        {/* <StoryblokComponent blok={story.content} /> */}
       </Layout>
     </div>
   );
 }
 
-export async function getStaticProps({ params }) {
-  let slug = params.slug ? params.slug.join('/') : 'home';
+// export async function getStaticProps({ params }) {
+//   let slug = params.slug ? params.slug.join('/') : 'home';
 
-  let sbParams = {
-    version: 'draft', // or 'published'
-  };
+//   let sbParams = {
+//     version: 'draft', // or 'published'
+//   };
 
-  const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
+//   const storyblokApi = getStoryblokApi();
+//   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, sbParams);
 
-  return {
-    props: {
-      story: data ? data.story : false,
-      key: data ? data.story.id : false,
-    },
-    revalidate: 3600,
-  };
-}
+//   return {
+//     props: {
+//       story: data ? data.story : false,
+//       key: data ? data.story.id : false,
+//     },
+//     revalidate: 3600,
+//   };
+// }
 
-export async function getStaticPaths() {
-  const storyblokApi = getStoryblokApi();
-  let { data } = await storyblokApi.get('cdn/links/', {
-    version: 'draft',
-  });
+// export async function getStaticPaths() {
+//   const storyblokApi = getStoryblokApi();
+//   let { data } = await storyblokApi.get('cdn/links/', {
+//     version: 'draft',
+//   });
 
-  let paths = [];
-  Object.keys(data.links).forEach((linkKey) => {
-    if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home') {
-      return;
-    }
+//   let paths = [];
+//   Object.keys(data.links).forEach((linkKey) => {
+//     if (data.links[linkKey].is_folder || data.links[linkKey].slug === 'home') {
+//       return;
+//     }
 
-    const slug = data.links[linkKey].slug;
-    let splittedSlug = slug.split('/');
+//     const slug = data.links[linkKey].slug;
+//     let splittedSlug = slug.split('/');
 
-    paths.push({ params: { slug: splittedSlug } });
-  });
+//     paths.push({ params: { slug: splittedSlug } });
+//   });
 
-  return {
-    paths: paths,
-    fallback: false,
-  };
-}
+//   return {
+//     paths: paths,
+//     fallback: false,
+//   };
+// }
